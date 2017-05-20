@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions>  
+
+   <definition name="login.defination" template="/WEB-INF/views/login.jsp">
+		<put-attribute name="title" value="PCMC" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	
+	<definition name="login" extends="login.defination">
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+  
+   <!-- Base Definition -->
+   <definition name="base-definition" template="/WEB-INF/views/layout.jsp">  
+       <put-attribute name="title" value="PCMC" />  
+       <put-attribute name="header" value="/WEB-INF/views/header.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />  
+   </definition>  
+   
+    <!-- Admin -->
+   <definition name="admin" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/admin/admin.jsp" />  
+   </definition>
+   
+    <!-- Master -->
+   <definition name="gut" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/gut.jsp" />  
+   </definition>
+   
+   <definition name="court" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/court.jsp" />  
+   </definition>
+   
+   <definition name="hospital" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/hospital.jsp" />  
+   </definition>
+   
+   <definition name="rack" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/rack.jsp" />  
+   </definition>
+   
+   <definition name="table" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/table.jsp" />  
+   </definition>
+   
+   <definition name="village" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/village.jsp" />  
+   </definition>
+   
+    <definition name="recordType" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/recordType.jsp" />  
+   </definition>
+   
+    <definition name="department" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/department.jsp" />  
+   </definition>
+   
+   <definition name="zone" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/zone.jsp" />  
+   </definition>
+  
+   <!-- Audit -->
+   <definition name="search" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/audit/search.jsp" />  
+   </definition> 
+   
+    <definition name="view" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/audit/view.jsp" />  
+   </definition>
+   
+   <definition name="upload" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/audit/upload.jsp" />  
+   </definition>
+   
+   <!-- law -->
+   <definition name="searchLaw" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/law/search.jsp" />  
+   </definition> 
+   
+    <definition name="viewLaw" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/law/view.jsp" />  
+   </definition>
+   
+   <definition name="uploadLaw" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/law/upload.jsp" />  
+   </definition>
+   
+     
+   <!-- BUP -->
+   <definition name="searchBup" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/bup/search.jsp" />  
+   </definition> 
+   
+    <definition name="viewBup" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/bup/view.jsp" />  
+   </definition>
+   
+   <definition name="uploadBup" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/bup/upload.jsp" />  
+   </definition>
+   
+     <!-- PropTax -->
+   <definition name="searchPropTax" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/proptax/search.jsp" />  
+   </definition> 
+   
+    <definition name="viewPropTax" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/proptax/view.jsp" />  
+   </definition>
+   
+   <definition name="uploadPropTax" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/proptax/upload.jsp" />  
+   </definition>
+   
+    <!-- Upload -->
+   <definition name="uploadDataPropTax" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/proptax/uploadDataPropTax.jsp" />  
+   </definition>
+   <definition name="uploadDataLaw" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/law/uploadDataLaw.jsp" />  
+   </definition>
+   
+  
+</tiles-definitions>
