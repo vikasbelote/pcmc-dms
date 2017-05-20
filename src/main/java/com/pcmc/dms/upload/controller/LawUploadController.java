@@ -16,6 +16,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pcmc.dms.upload.service.LawService;
 
+/*
+ * Law Controller
+ */
 @Controller
 public class LawUploadController {
 	
