@@ -21,7 +21,7 @@ import com.pcmc.dms.model.LawModel;
 import com.pcmc.dms.repository.LawRepository;
 
 /*
- * Law Service
+ * Law Service used ti add
  */
 @Component
 public class LawService {
