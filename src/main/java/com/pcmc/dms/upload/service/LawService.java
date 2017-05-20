@@ -20,6 +20,9 @@ import com.pcmc.dms.helper.CellValueHelper;
 import com.pcmc.dms.model.LawModel;
 import com.pcmc.dms.repository.LawRepository;
 
+/*
+ * Law Service
+ */
 @Component
 public class LawService {
 	
