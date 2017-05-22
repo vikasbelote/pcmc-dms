@@ -5,41 +5,33 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.ss.usermodel.CellStyle;
+
 import org.apache.poi.ss.usermodel.Font;
-import org.springframework.web.servlet.view.document.AbstractExcelView;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.springframework.web.servlet.view.document.AbstractXlsxView;
 
 @SuppressWarnings("deprecation")
-public class PropTaxTemplate extends AbstractExcelView  {
+public class PropTaxTemplate extends AbstractXlsxView  {
+
 
 	@Override
-    protected void buildExcelDocument(Map<String, Object> model,
-            HSSFWorkbook workbook, HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        // get data model which is passed by the Spring container
-        //List<Book> listBooks = (List<Book>) model.get("listBooks");
-         
-        // create a new Excel sheet
-        HSSFSheet sheet = workbook.createSheet("Data");
+	protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		XSSFSheet sheet = (XSSFSheet) workbook.createSheet("Data");
         sheet.setDefaultColumnWidth(30);
          
         // create style for header cells
-        CellStyle style = workbook.createCellStyle();
+        XSSFCellStyle style = (XSSFCellStyle) workbook.createCellStyle();
         Font font = workbook.createFont();
         font.setFontName("Arial");
-        style.setFillForegroundColor(HSSFColor.BLUE.index);
-        style.setFillPattern(CellStyle.SOLID_FOREGROUND);
-        font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
-        font.setColor(HSSFColor.WHITE.index);
         style.setFont(font);
          
         // create header row
-        HSSFRow header = sheet.createRow(0);
+        XSSFRow header = sheet.createRow(0);
          
         header.createCell(0).setCellValue("Village Name");
         header.getCell(0).setCellStyle(style);
@@ -52,17 +44,5 @@ public class PropTaxTemplate extends AbstractExcelView  {
          
         header.createCell(3).setCellValue("Image Name");
         header.getCell(3).setCellStyle(style);
-         
-        // create data rows
-//        int rowCount = 1;
-//         
-//        for (Book aBook : listBooks) {
-//            HSSFRow aRow = sheet.createRow(rowCount++);
-//            aRow.createCell(0).setCellValue(aBook.getTitle());
-//            aRow.createCell(1).setCellValue(aBook.getAuthor());
-//            aRow.createCell(2).setCellValue(aBook.getIsbn());
-//            aRow.createCell(3).setCellValue(aBook.getPublishedDate());
-//            aRow.createCell(4).setCellValue(aBook.getPrice());
-//        }
-    }
+	}
 }

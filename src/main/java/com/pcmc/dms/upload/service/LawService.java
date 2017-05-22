@@ -3,16 +3,15 @@ package com.pcmc.dms.upload.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +20,7 @@ import com.pcmc.dms.model.LawModel;
 import com.pcmc.dms.repository.LawRepository;
 
 /*
- * Law Service used ti add
+ * Law Service
  */
 @Component
 public class LawService {
@@ -34,7 +33,7 @@ public class LawService {
 		List<LawModel> lawModelList = new ArrayList<LawModel>();
 		FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
-		Workbook workbook = new HSSFWorkbook(inputStream);
+		Workbook workbook = new XSSFWorkbook(inputStream);
 		Sheet firstSheet = workbook.getSheetAt(0);
 		Iterator<Row> iterator = firstSheet.iterator();
 		
