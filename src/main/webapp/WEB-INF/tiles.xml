@@ -138,6 +138,14 @@
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
        <put-attribute name="body" value="/WEB-INF/views/upload/law/uploadDataLaw.jsp" />  
    </definition>
+    <definition name="uploadDataAudit" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/audit/uploadDataAudit.jsp" />  
+   </definition>
+    <definition name="uploadDataBup" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/bup/uploadDataBup.jsp" />  
+   </definition>
    
   
 </tiles-definitions>

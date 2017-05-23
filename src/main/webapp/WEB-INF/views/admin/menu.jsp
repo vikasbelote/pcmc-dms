@@ -87,6 +87,8 @@
 							<ul class="dropdown-menu">
 								<li><a href="uploadDataPropTax">Property Tax</a></li>
 								<li><a href="uploadDataLaw">Law</a></li>
+								<li><a href="uploadDataAudit">Audit</a></li>
+								<li><a href="uploadDataBup">Building Permission</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -95,6 +97,8 @@
 							<ul class="dropdown-menu">
 								<li><a href="uploadDataPropTax">Property Tax</a></li>
 								<li><a href="uploadDataLaw">Law</a></li>
+								<li><a href="uploadDataAudit">Audit</a></li>
+								<li><a href="uploadDataBup">Building Permission</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>

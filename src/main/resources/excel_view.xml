@@ -6,5 +6,7 @@
      
     <bean id="propTaxTemplate" class="com.pcmc.dms.view.PropTaxTemplate" />
     <bean id="lawTemplate" class="com.pcmc.dms.view.LawTemplate" />
+    <bean id="auditTemplate" class="com.pcmc.dms.view.AuditTemplate" />
+    <bean id="bupTemplate" class="com.pcmc.dms.view.BupTemplate" />
      
 </beans>
