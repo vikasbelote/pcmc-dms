@@ -79,8 +79,6 @@
 		</div>
 	</form:form>
 </div>
-
-
 <div class="col-sm-8">
 	<c:choose>
 		<c:when test="${ sessionScope.print || sessionScope.download }">

@@ -22,7 +22,7 @@ import com.pcmc.dms.repository.AuditRepository;
 
 
 @Controller
-public class AuditContoller {
+public class AuditContoller extends BaseController {
 	
 	@Autowired
 	private AuditRepository auditRepository;
@@ -70,11 +70,14 @@ public class AuditContoller {
 	}
 	
 	@RequestMapping(value = "/viewAudit")
-	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId) {
+	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId, HttpSession session) {
 		
 		AuditModel model = auditRepository.getAuditModel(entryId);
 		
-
+		//move the file from C:\image folder to static\images folder
+		String rootPath = session.getServletContext().getRealPath("/");
+		fileHelper.copyFile(model.getImagePath(), rootPath);
+		
 		ModelAndView modelAndView = new ModelAndView("view", "auditModel", model);
 		modelAndView.addObject("show", true);
 		modelAndView.addObject("UPLOAD_URL", UPLOAD_URL);
@@ -101,7 +104,7 @@ public class AuditContoller {
 		try {
 			byte barr[] = file.getBytes();
 			BufferedOutputStream bout = new BufferedOutputStream(
-					new FileOutputStream(rootPath + "/images/" + fileName));
+					new FileOutputStream(rootPath + "/static/images/" + fileName));
 			bout.write(barr);
 			bout.flush();
 			bout.close();
