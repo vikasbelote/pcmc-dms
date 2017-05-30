@@ -16,22 +16,26 @@
 				&#2325;&#2379;&#2337;</label>
 			<div class="col-sm-9" style="text-align: left;">
 				<form:input path="propertyCode" class="col-sm-5 form-control" />
+
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">&#2346;&#2381;&#2352;&#2377;&#2346;&#2352;&#2381;&#2335;&#2368;&#2330;&#2375;
 				&#2350;&#2366;&#2354;&#2325; </label>
 			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="propertyHolderName" class="col-sm-5 form-control" />
+				<%-- <form:input path="propertyHolderName" class="col-sm-5 form-control" /> --%>
+				<form:label path="propertyHolderName" class="col-sm-12">
+					${ propTaxModel.propertyHolderName }
+				</form:label>
 			</div>
 		</div>
-		<div class="form-group">
+		<%-- <div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">Accupant
 				Name</label>
 			<div class="col-sm-9" style="text-align: left;">
 				<form:input path="accupantName" class="col-sm-5 form-control" />
 			</div>
-		</div>
+		</div> --%>
 		<div class="form-group">
 			<div class="col-md-offset-3 col-md-3">
 				<a href="./propTax" class="btn btn-sm btn-primary" type="button">
