@@ -20,7 +20,7 @@ import com.pcmc.dms.model.LawModel;
 import com.pcmc.dms.repository.LawRepository;
 
 @Controller
-public class LawController {
+public class LawController extends BaseController{
 	
 	@Autowired
 	private LawRepository lawRepository;
@@ -64,9 +64,12 @@ public class LawController {
 	}
 	
 	@RequestMapping(value = "/viewLaw")
-	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId) {
+	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId, HttpSession session) {
 		
 		LawModel lawModel = lawRepository.getLawModel(entryId);
+		//move the file from C:\image folder to static\images folder
+		String rootPath = session.getServletContext().getRealPath("/");
+		fileHelper.copyFile(lawModel.getImagePath(), rootPath);
 		
 
 		ModelAndView modelAndView = new ModelAndView("viewLaw", "lawModel", lawModel);
@@ -95,7 +98,7 @@ public class LawController {
 		try {
 			byte barr[] = file.getBytes();
 			BufferedOutputStream bout = new BufferedOutputStream(
-					new FileOutputStream(rootPath + "/images/" + fileName));
+					new FileOutputStream(rootPath + "/static/images/" + fileName));
 			bout.write(barr);
 			bout.flush();
 			bout.close();
