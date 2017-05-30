@@ -20,7 +20,7 @@ import com.pcmc.dms.model.PropTaxModel;
 import com.pcmc.dms.repository.PropTaxRepository;
 
 @Controller
-public class PropTaxController {
+public class PropTaxController extends BaseController {
 	
 	@Autowired
 	private PropTaxRepository propTaxRepository;
@@ -76,9 +76,13 @@ public class PropTaxController {
 	}
 	
 	@RequestMapping(value = "/"+VIEW_URL)
-	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId) {
+	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId,  HttpSession session) {
 		
 		PropTaxModel propTaxModel = propTaxRepository.getModel(entryId, PropTaxModel.class);
+		
+		//move the file from C:\image folder to static\images folder
+		String rootPath = session.getServletContext().getRealPath("/");
+		fileHelper.copyFile(propTaxModel.getImagePath(), rootPath);
 
 		ModelAndView modelAndView = new ModelAndView(VIEW_URL, MODEL_NAME, propTaxModel);
 		modelAndView.addObject("show", true);
