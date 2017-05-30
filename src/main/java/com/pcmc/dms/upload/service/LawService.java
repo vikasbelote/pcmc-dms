@@ -62,7 +62,12 @@ public class LawService {
 					String courtName = (String) CellValueHelper.getCellValue(nextCell);
 					law.setCourtName(courtName);
 					break;
+				}case 5: {
+					String imagePathName = (String) CellValueHelper.getCellValue(nextCell);
+					law.setImagePath(imagePathName);
+					break;
 				}
+				
 				}
 			}
 			lawModelList.add(law);
