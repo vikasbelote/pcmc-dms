@@ -30,16 +30,25 @@ public class BupTemplate extends AbstractXlsxView   {
         // create header row
         XSSFRow header = sheet.createRow(0);
          
-        header.createCell(0).setCellValue("Gatta No");
+        header.createCell(0).setCellValue("Village Name");
         header.getCell(0).setCellStyle(style);
          
-        header.createCell(1).setCellValue("Bup No");
+        header.createCell(1).setCellValue("Bup Number");
         header.getCell(1).setCellStyle(style);
          
-        header.createCell(2).setCellValue("Serve No");
+        header.createCell(2).setCellValue("Architect Name");
         header.getCell(2).setCellStyle(style);
         
-        header.createCell(3).setCellValue("Image Name");
+        header.createCell(3).setCellValue("Owner Name");
         header.getCell(3).setCellStyle(style);
+        
+        header.createCell(4).setCellValue("Serve Number");
+        header.getCell(4).setCellStyle(style);
+        
+        header.createCell(5).setCellValue("CTS Number");
+        header.getCell(5).setCellStyle(style);
+        
+        header.createCell(6).setCellValue("Image Name");
+        header.getCell(6).setCellStyle(style);
 	}
 }

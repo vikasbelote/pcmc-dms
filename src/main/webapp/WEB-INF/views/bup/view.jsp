@@ -19,6 +19,13 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<label class="col-sm-3 control-label" for="form-field-1">CTS
+				&#2344;&#2306;&#2348;&#2352; </label>
+			<div class="col-sm-9" style="text-align: left;">
+				<form:input path="ctsNo" class="col-sm-5 form-control" />
+			</div>
+		</div>
+		<div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">&#2309;&#2349;&#2367;&#2351;&#2306;&#2340;&#2366;
 				&#2344;&#2366;&#2357; </label>
 			<div class="col-sm-9" style="text-align: left;">
@@ -40,7 +47,7 @@
 					class="col-sm-5 form-control" />
 			</div>
 		</div>
-		<div class="form-group">
+		<%-- <div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">&#2327;&#2335;&#2381;&#2335;&#2366;
 				&#2344;&#2306;&#2348;&#2352;</label>
 			<div class="col-sm-9" style="text-align: left;">
@@ -59,7 +66,7 @@
 			<div class="col-sm-9" style="text-align: left;">
 				<form:input path="year" class="col-sm-5 form-control" />
 			</div>
-		</div>
+		</div> --%>
 		<div class="form-group">
 			<div class="col-md-offset-3 col-md-3">
 				<a href="./bup" class="btn btn-sm btn-primary" type="button"> <i

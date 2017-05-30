@@ -48,25 +48,42 @@ public class BupService {
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
 				int columnIndex = nextCell.getColumnIndex();
-
+				
+				Object obj = CellValueHelper.getCellValue(nextCell);
+				
 				switch (columnIndex) {
 				case 0: {
-					String gattaNo = (String) CellValueHelper.getCellValue(nextCell);
-					bupModel.setGattaNo(gattaNo);
+					String villageName = String.valueOf(obj);
+					bupModel.setVillageName(villageName);
 					break;
 				}
 				case 1: {
-					String bupNo = (String) CellValueHelper.getCellValue(nextCell);
+					String bupNo = String.valueOf(obj);
 					bupModel.setBuildingPermissionNo(bupNo);
 					break;
 				}
 				case 2: {
-					String serveNo = (String) CellValueHelper.getCellValue(nextCell);
-					bupModel.setServeNo(serveNo);
+					String architectName = String.valueOf(obj);
+					bupModel.setArchitectName(architectName);
 					break;
 				}
 				case 3: {
-					String imagePath = (String) CellValueHelper.getCellValue(nextCell);
+					String ownerName = String.valueOf(obj);
+					bupModel.setOwnerName(ownerName);
+					break;
+				}
+				case 4: {
+					String serveNo =  String.valueOf(obj);
+					bupModel.setServeNo(serveNo);
+					break;
+				}
+				case 5: {
+					String ctsNo = String.valueOf(obj);
+					bupModel.setCtsNo(ctsNo);
+					break;
+				}
+				case 6: {
+					String imagePath = String.valueOf(obj);
 					bupModel.setImagePath(imagePath);
 					break;
 				}

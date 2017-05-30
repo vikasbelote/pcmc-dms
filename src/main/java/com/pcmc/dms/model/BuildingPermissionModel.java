@@ -21,6 +21,9 @@ public class BuildingPermissionModel {
 	@Column(name = "village_name")
 	private String villageName;
 	
+	@Column(name = "cts_no")
+	private String ctsNo;
+	
 	@Column(name = "serve_no")
 	private String serveNo;
 	
@@ -123,5 +126,13 @@ public class BuildingPermissionModel {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	public String getCtsNo() {
+		return ctsNo;
+	}
+
+	public void setCtsNo(String ctsNo) {
+		this.ctsNo = ctsNo;
 	}
 }

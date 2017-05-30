@@ -20,7 +20,7 @@ import com.pcmc.dms.model.BuildingPermissionModel;
 import com.pcmc.dms.repository.BuildingPermissionRepository;
 
 @Controller
-public class BuildingPermissionController {
+public class BuildingPermissionController extends BaseController {
 	
 	@Autowired
 	private BuildingPermissionRepository buildingPermissionRepository;
@@ -76,10 +76,14 @@ public class BuildingPermissionController {
 	}
 	
 	@RequestMapping(value = "/"+VIEW_URL)
-	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId) {
+	public ModelAndView viewBup(@RequestParam(value = "id", required = false) int entryId, HttpSession session) {
 		
 		BuildingPermissionModel bupModel = buildingPermissionRepository.getBuildingPermissionModel(entryId);
-
+		
+		//move the file from C:\image folder to static\images folder
+		String rootPath = session.getServletContext().getRealPath("/");
+		fileHelper.copyFile(bupModel.getImagePath(), rootPath);
+		
 		ModelAndView modelAndView = new ModelAndView(VIEW_URL, MODEL_NAME, bupModel);
 		modelAndView.addObject("show", true);
 		modelAndView.addObject("UPLOAD_URL", UPLOAD_URL);
