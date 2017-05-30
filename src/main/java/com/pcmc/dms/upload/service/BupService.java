@@ -50,9 +50,12 @@ public class BupService {
 				int columnIndex = nextCell.getColumnIndex();
 				
 				Object obj = CellValueHelper.getCellValue(nextCell);
-				
+				if(obj == null)
+					obj = "";
+					
 				switch (columnIndex) {
 				case 0: {
+					
 					String villageName = String.valueOf(obj);
 					bupModel.setVillageName(villageName);
 					break;
