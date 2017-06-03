@@ -48,25 +48,34 @@ public class AuditService {
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
 				int columnIndex = nextCell.getColumnIndex();
+				
+				Object obj = CellValueHelper.getCellValue(nextCell);
+				if(obj == null)
+					obj = "";
 
 				switch (columnIndex) {
 				case 0: {
-					String gutNo = (String) CellValueHelper.getCellValue(nextCell);
+					String gutNo = String.valueOf(obj);
 					audit.setGutNo(gutNo);
 					break;
 				}
 				case 1: {
-					String gattaNo = (String) CellValueHelper.getCellValue(nextCell);
+					String gattaNo = String.valueOf(obj);
 					audit.setGattaNo(gattaNo);
 					break;
 				}
 				case 2: {
-					String docNo = (String) CellValueHelper.getCellValue(nextCell);
+					String docNo = String.valueOf(obj);
 					audit.setDocNo(docNo);
 					break;
 				}
 				case 3: {
-					String imagePath = (String) CellValueHelper.getCellValue(nextCell);
+					String vibhagName = String.valueOf(obj);
+					audit.setVibhagName(vibhagName);
+					break;
+				}
+				case 4: {
+					String imagePath = String.valueOf(obj);
 					audit.setImagePath(imagePath);
 					break;
 				}

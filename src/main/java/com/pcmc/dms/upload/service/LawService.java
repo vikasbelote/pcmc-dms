@@ -47,23 +47,27 @@ public class LawService {
 			
 			Iterator<Cell> cellIterator = nextRow.cellIterator();
 			LawModel law = new LawModel();
-
+			
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
 				int columnIndex = nextCell.getColumnIndex();
+				
+				Object obj = CellValueHelper.getCellValue(nextCell);
+				if(obj == null)
+					obj = "";
 
 				switch (columnIndex) {
 				case 0: {
-					String caseNo = (String) CellValueHelper.getCellValue(nextCell);
+					String caseNo = String.valueOf(obj);
 					law.setCaseNo(caseNo);
 					break;
 				}
 				case 1: {
-					String courtName = (String) CellValueHelper.getCellValue(nextCell);
+					String courtName = String.valueOf(obj);
 					law.setCourtName(courtName);
 					break;
 				}case 5: {
-					String imagePathName = (String) CellValueHelper.getCellValue(nextCell);
+					String imagePathName = String.valueOf(obj);
 					law.setImagePath(imagePathName);
 					break;
 				}

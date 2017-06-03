@@ -45,6 +45,9 @@ public class AuditModel {
 	@Column(name = "year")
 	private String year;
 	
+	@Column(name = "vibhag_name")
+	private String vibhagName;
+	
 	@Column(name = "image_path")
 	private String imagePath;
 
@@ -134,6 +137,14 @@ public class AuditModel {
 
 	public void setYear(String year) {
 		this.year = year;
+	}
+
+	public String getVibhagName() {
+		return vibhagName;
+	}
+
+	public void setVibhagName(String vibhagName) {
+		this.vibhagName = vibhagName;
 	}
 
 }

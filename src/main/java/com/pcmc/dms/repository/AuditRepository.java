@@ -23,19 +23,13 @@ public class AuditRepository extends BaseRepository {
 
 		StringBuffer sb = new StringBuffer();
 		sb.append(
-				"select row_id,record_type,gut_no,rack_no,doc_no,vibhag_sanketik_no,up_vibhag_sanketik_no,gatta_no,file_name,year,image_path ");
+				"select row_id,gut_no,gatta_no,doc_no,vibhag_name ");
 		sb.append("from dms_audit ");
-		sb.append("where record_type like CONCAT(TRIM(IFNULL('" + auditModel.getRecordType() + "', '')), '%') ");
-		sb.append("and gut_no like CONCAT(TRIM(IFNULL('" + auditModel.getGutNo() + "', '')), '%') ");
-		sb.append("and rack_no like CONCAT(TRIM(IFNULL('" + auditModel.getRackNo() + "', '')), '%') ");
-		sb.append("and doc_no like CONCAT(TRIM(IFNULL('" + auditModel.getDocNo() + "', '')), '%') ");
-		sb.append("and vibhag_sanketik_no like CONCAT(TRIM(IFNULL('" + auditModel.getVibhagSanketikNo()
-				+ "', '')), '%') ");
-		sb.append("and up_vibhag_sanketik_no like CONCAT(TRIM(IFNULL('" + auditModel.getUpVibhagSanketikNo()
-				+ "', '')), '%') ");
+		sb.append("where gut_no like CONCAT(TRIM(IFNULL('" + auditModel.getGutNo() + "', '')), '%') ");
 		sb.append("and gatta_no like CONCAT(TRIM(IFNULL('" + auditModel.getGattaNo() + "', '')), '%') ");
-		sb.append("and file_name like CONCAT(TRIM(IFNULL('" + auditModel.getFileName() + "', '')), '%') ");
-		sb.append("and year like CONCAT(TRIM(IFNULL('" + auditModel.getYear() + "', '')), '%') ");
+		sb.append("and doc_no like CONCAT(TRIM(IFNULL('" + auditModel.getDocNo() + "', '')), '%') ");
+		sb.append("and vibhag_name like CONCAT(TRIM(IFNULL('" + auditModel.getVibhagName() + "', '')), '%') ");
+		sb.append("LIMIT 100");
 
 		SQLQuery hibQuery = session.createSQLQuery(sb.toString());
 
