@@ -29,6 +29,14 @@
 				</form:label>
 			</div>
 		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right"
+				for="form-field-1"> &#2327;&#2335;
+				&#2344;&#2306;&#2348;&#2352;</label>
+			<div class="col-sm-3">
+				<form:input path="gutNo" class="col-sm-5 form-control" />
+			</div>
+		</div>
 		<%-- <div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">Accupant
 				Name</label>

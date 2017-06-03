@@ -27,6 +27,9 @@ public class PropTaxModel {
 	@Column(name = "property_holder_name")
 	private String propertyHolderName;
 	
+	@Column(name = "gut_no")
+	private String gutNo;
+	
 	@Column(name = "image_path")
 	private String imagePath;
 
@@ -68,6 +71,14 @@ public class PropTaxModel {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	public String getGutNo() {
+		return gutNo;
+	}
+
+	public void setGutNo(String gutNo) {
+		this.gutNo = gutNo;
 	}
 
 }

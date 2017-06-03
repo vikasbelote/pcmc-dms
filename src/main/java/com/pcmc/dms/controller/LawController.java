@@ -67,9 +67,11 @@ public class LawController extends BaseController{
 	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId, HttpSession session) {
 		
 		LawModel lawModel = lawRepository.getLawModel(entryId);
+		
 		//move the file from C:\image folder to static\images folder
+		String LOCAL_FOLDER_PATH = "C:\\images\\law\\";
 		String rootPath = session.getServletContext().getRealPath("/");
-		fileHelper.copyFile(lawModel.getImagePath(), rootPath);
+		fileHelper.copyFile(lawModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 		
 
 		ModelAndView modelAndView = new ModelAndView("viewLaw", "lawModel", lawModel);

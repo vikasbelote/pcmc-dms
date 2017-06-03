@@ -41,8 +41,11 @@ public class PropTaxTemplate extends AbstractXlsxView  {
          
         header.createCell(2).setCellValue("Property Holder Name");
         header.getCell(2).setCellStyle(style);
-         
-        header.createCell(3).setCellValue("Image Name");
+        
+        header.createCell(3).setCellValue("Gut No");
         header.getCell(3).setCellStyle(style);
+         
+        header.createCell(4).setCellValue("Image Name");
+        header.getCell(4).setCellStyle(style);
 	}
 }

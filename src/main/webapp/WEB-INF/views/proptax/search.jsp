@@ -10,7 +10,7 @@
 				&#2344;&#2366;&#2357;</label>
 			<div class="col-sm-3">
 				<form:select path="villageName" class="col-sm-5 form-control">
-					<form:option value="" label="Choose Record Type" />
+					<form:option value="" label="Choose Village Name" />
 					<form:options items="${villageList}" itemLabel="villageName"
 						itemValue="villageName" />
 				</form:select>
@@ -24,15 +24,15 @@
 				<form:input path="propertyCode" class="col-sm-5 form-control" />
 			</div>
 		</div>
-		<%-- <div class="form-group">
+		<div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right"
-				for="form-field-1">&#2346;&#2381;&#2352;&#2377;&#2346;&#2352;&#2381;&#2335;&#2368;&#2330;&#2375;
-				&#2350;&#2366;&#2354;&#2325; </label>
+				for="form-field-1"> &#2327;&#2335;
+				&#2344;&#2306;&#2348;&#2352;</label>
 			<div class="col-sm-3">
-				<form:input path="propertyHolderName" class="col-sm-5 form-control" />
+				<form:input path="gutNo" class="col-sm-5 form-control" />
 			</div>
 		</div>
-		<div class="form-group">
+		<%-- <div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right"
 				for="form-field-1">Accupant Name</label>
 			<div class="col-sm-3">
@@ -64,6 +64,8 @@
 										&#2325;&#2379;&#2337;</strong></th>
 								<th><strong>&#2346;&#2381;&#2352;&#2377;&#2346;&#2352;&#2381;&#2335;&#2368;&#2330;&#2375;
 										&#2350;&#2366;&#2354;&#2325; </strong></th>
+								<th><strong> &#2327;&#2335;
+				&#2344;&#2306;&#2348;&#2352;</strong></th>
 								<th></th>
 							</tr>
 						</thead>
@@ -74,6 +76,7 @@
 									<td>${ item[1]  }</td>
 									<td>${ item[2] }</td>
 									<td>${ item[3] }</td>
+									<td>${ item[4] }</td>
 									<td><a href="./viewPropTax?id=${ item[0] }">View</a></td>
 								</tr>
 							</c:forEach>

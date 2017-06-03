@@ -16,10 +16,11 @@ public class PropTaxRepository extends BaseRepository {
 		List<PropTaxModel> list = null;
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("select row_id,village_name,property_code,property_holder_name ");
+		sb.append("select row_id,village_name,property_code,property_holder_name,gut_no ");
 		sb.append("from dms_property_tax ");
-		sb.append("where village_name like CONCAT(TRIM(IFNULL('" + propTaxModel.getVillageName() + "', '')), '%') ");
-		sb.append("and property_code like CONCAT(TRIM(IFNULL('" + propTaxModel.getPropertyCode() + "', '')), '%') ");
+		sb.append("where (village_name like CONCAT(TRIM(IFNULL('" + propTaxModel.getVillageName() + "', '')), '%') or village_name is null) ");
+		sb.append("and (property_code like CONCAT(TRIM(IFNULL('" + propTaxModel.getPropertyCode() + "', '')), '%')  or property_code is null) ");
+		sb.append("and (gut_no like CONCAT(TRIM(IFNULL('" + propTaxModel.getGutNo() + "', '')), '%') or gut_no is null) ");
 		sb.append("LIMIT 100");
 		
 		list = super.getList(sb.toString(),PropTaxModel.class);

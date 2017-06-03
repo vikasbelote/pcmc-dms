@@ -12,14 +12,12 @@ import org.springframework.util.StringUtils;
 @Component
 public class FileHelper {
 	
-	public static final String LOCAL_FOLDER_PATH = "C:\\images\\";
-	
-	public boolean copyFile(String imageName, String rootPath){
+	public boolean copyFile(String imageName, String rootPath, String localFolderPath){
 		
 		if(StringUtils.isEmpty(imageName))
 			return false;
 		
-		String sourcePath = LOCAL_FOLDER_PATH + imageName + ".pdf";
+		String sourcePath = localFolderPath + imageName + ".pdf";
 		File source = new File(sourcePath);
 		
 		String destPath = rootPath + "/static/images/" + imageName + ".pdf";

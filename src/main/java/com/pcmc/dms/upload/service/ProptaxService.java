@@ -49,18 +49,20 @@ public class ProptaxService {
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
 				int columnIndex = nextCell.getColumnIndex();
+				
+
+				Object obj = CellValueHelper.getCellValue(nextCell);
+				if(obj == null)
+					obj = "";
 
 				switch (columnIndex) {
 				case 0: {
-					String villageName = (String) CellValueHelper.getCellValue(nextCell);
+					String villageName = String.valueOf(obj);
 					propTax.setVillageName(villageName);
 					break;
 				}
 				case 1: {
-
-					Double d = (Double) CellValueHelper.getCellValue(nextCell);
-					BigDecimal bg = new BigDecimal(d);
-					String propertyCode = String.valueOf(bg);
+					String propertyCode = String.valueOf(obj);
 					propTax.setPropertyCode(propertyCode);
 					break;
 				}
@@ -68,6 +70,16 @@ public class ProptaxService {
 					String propHolderName = (String) CellValueHelper.getCellValue(nextCell);
 					if (propHolderName != null)
 						propTax.setPropertyHolderName(UnicodeHelper.stringToHTMLString(propHolderName));
+					break;
+				}
+				case 3: {
+					String gutNo = String.valueOf(obj);
+					propTax.setGutNo(gutNo);
+					break;
+				}
+				case 4: {
+					String imagePath = String.valueOf(obj);
+					propTax.setImagePath(imagePath);
 					break;
 				}
 				}

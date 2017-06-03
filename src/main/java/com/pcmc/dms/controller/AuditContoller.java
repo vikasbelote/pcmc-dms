@@ -75,8 +75,9 @@ public class AuditContoller extends BaseController {
 		AuditModel model = auditRepository.getAuditModel(entryId);
 		
 		//move the file from C:\image folder to static\images folder
+		String LOCAL_FOLDER_PATH = "C:\\images\\audit\\";
 		String rootPath = session.getServletContext().getRealPath("/");
-		fileHelper.copyFile(model.getImagePath(), rootPath);
+		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 		
 		ModelAndView modelAndView = new ModelAndView("view", "auditModel", model);
 		modelAndView.addObject("show", true);
