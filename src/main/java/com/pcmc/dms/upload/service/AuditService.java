@@ -52,7 +52,7 @@ public class AuditService {
 				Object obj = CellValueHelper.getCellValue(nextCell);
 				if(obj == null)
 					obj = "";
-
+					
 				switch (columnIndex) {
 				case 0: {
 					String gutNo = String.valueOf(obj);

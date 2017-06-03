@@ -13,8 +13,11 @@ public class CellValueHelper {
 	    case Cell.CELL_TYPE_BOOLEAN:
 	        return cell.getBooleanCellValue();
 	 
-	    case Cell.CELL_TYPE_NUMERIC:
-	        return cell.getNumericCellValue();
+	    case Cell.CELL_TYPE_NUMERIC:{
+	    	Double value = new Double(cell.getNumericCellValue());
+	    	Integer intValue = value.intValue();
+	    	return intValue;
+	    }
 	    }
 	 
 	    return null;
