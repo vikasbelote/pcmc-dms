@@ -72,7 +72,7 @@ public class AuditContoller extends BaseController {
 	@RequestMapping(value = "/viewAudit")
 	public ModelAndView viewAudit(@RequestParam(value = "id", required = false) int entryId, HttpSession session) {
 		
-		AuditModel model = auditRepository.getAuditModel(entryId);
+		AuditModel model = auditRepository.getModel(entryId, AuditModel.class);
 		
 		//move the file from C:\image folder to static\images folder
 		String LOCAL_FOLDER_PATH = "C:\\images\\audit\\";

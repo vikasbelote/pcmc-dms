@@ -75,6 +75,11 @@
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
        <put-attribute name="body" value="/WEB-INF/views/master/zone.jsp" />  
    </definition>
+   
+   <definition name="prabhag" extends="base-definition">
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />      
+       <put-attribute name="body" value="/WEB-INF/views/master/prabhag.jsp" />  
+   </definition>
   
    <!-- Audit -->
    <definition name="search" extends="base-definition">    
@@ -129,6 +134,19 @@
        <put-attribute name="body" value="/WEB-INF/views/proptax/upload.jsp" />  
    </definition>
    
+   <!-- Vivah Nodhani -->
+   <definition name="searchVivahNodhani" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/vivahnodhani/search.jsp" />  
+   </definition> 
+   
+    <definition name="viewVivahNodhani" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/vivahnodhani/view.jsp" />  
+   </definition>
+   
+   <definition name="uploadVivahNodhani" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/vivahnodhani/upload.jsp" />  
+   </definition>
+   
     <!-- Upload -->
    <definition name="uploadDataPropTax" extends="base-definition">    
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
@@ -146,6 +164,9 @@
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
        <put-attribute name="body" value="/WEB-INF/views/upload/bup/uploadDataBup.jsp" />  
    </definition>
-   
+   <definition name="uploadDataVivahNodhani" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/vivah/uploadDataVivahNodhani.jsp" />  
+   </definition>
   
 </tiles-definitions>

@@ -15,42 +15,42 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pcmc.dms.master.VillageMaster;
-import com.pcmc.dms.model.PropTaxModel;
-import com.pcmc.dms.repository.PropTaxRepository;
+import com.pcmc.dms.master.PrabhagMaster;
+import com.pcmc.dms.model.VivahNodhaniModel;
+import com.pcmc.dms.repository.VivahNodhniRepository;
 
 @Controller
-public class PropTaxController extends BaseController {
+public class VivahNodhaniController extends BaseController{
 	
 	@Autowired
-	private PropTaxRepository propTaxRepository;
+	private VivahNodhniRepository vivahNodhniRepository;
 	
 	/*
 	 * Upload URL name and View name
 	 */
-	private static final String UPLOAD_URL = "uploadPropTax";
+	private static final String UPLOAD_URL = "uploadVivahNodhani";
 
-	private static final String SEARCH_URL = "propTax";
+	private static final String SEARCH_URL = "vivahNodhani";
 	
 	/*
 	 * View URL name and View name
 	 */
-	private static final String VIEW_URL = "viewPropTax";
+	private static final String VIEW_URL = "viewVivahNodhani";
 	
-	private static final String MODEL_NAME = "propTaxModel";
+	private static final String MODEL_NAME = "vivahNodhaniModel";
 	
-	private static final String SEARCH_VIEW_NAME = "searchPropTax";
-
+	private static final String SEARCH_VIEW_NAME = "searchVivahNodhani";
+	
 	@RequestMapping(value = "/" + SEARCH_URL, method = RequestMethod.GET)
 	public ModelAndView index() {
 		
-		List<VillageMaster> villageList = propTaxRepository.getMasterList(VillageMaster.class);
+		List<PrabhagMaster> prabhagMasterList = vivahNodhniRepository.getMasterList(PrabhagMaster.class);
 		
-		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME, MODEL_NAME, new PropTaxModel());
+		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME, MODEL_NAME, new VivahNodhaniModel());
 		modelAndView.addObject("show", true);
 		modelAndView.addObject("UPLOAD_URL", UPLOAD_URL);
 		modelAndView.addObject("SEARCH_URL", SEARCH_URL);
-		modelAndView.addObject("villageList", villageList);
+		modelAndView.addObject("prabhagMasterList", prabhagMasterList);
 		
 		modelAndView.addObject("showDeptTable", false);
 		
@@ -58,16 +58,16 @@ public class PropTaxController extends BaseController {
 	}
 	
 	@RequestMapping(value = "/" + SEARCH_URL, method = RequestMethod.POST)
-	public ModelAndView search(@ModelAttribute(MODEL_NAME) PropTaxModel propTaxModel) {
+	public ModelAndView search(@ModelAttribute(MODEL_NAME) VivahNodhaniModel vivahNodhaniModel) {
 		
-		List<PropTaxModel> list = propTaxRepository.getPropTaxList(propTaxModel);
-		List<VillageMaster> villageList = propTaxRepository.getMasterList(VillageMaster.class);
+		List<VivahNodhaniModel> list = vivahNodhniRepository.getVivahNodhaniModelList(vivahNodhaniModel);
+		List<PrabhagMaster> prabhagMasterList = vivahNodhniRepository.getMasterList(PrabhagMaster.class);
 		
-		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME,MODEL_NAME, propTaxModel);
+		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME,MODEL_NAME, vivahNodhaniModel);
 		modelAndView.addObject("show", true);
 		modelAndView.addObject("UPLOAD_URL", UPLOAD_URL);
 		modelAndView.addObject("SEARCH_URL", SEARCH_URL);
-		modelAndView.addObject("villageList", villageList);
+		modelAndView.addObject("prabhagMasterList", prabhagMasterList);
 		
 		modelAndView.addObject("showDeptTable", true);
 		modelAndView.addObject("searchList", list);
@@ -78,14 +78,14 @@ public class PropTaxController extends BaseController {
 	@RequestMapping(value = "/"+VIEW_URL)
 	public ModelAndView viewPropTax(@RequestParam(value = "id", required = false) int entryId,  HttpSession session) {
 		
-		PropTaxModel propTaxModel = propTaxRepository.getModel(entryId, PropTaxModel.class);
+		VivahNodhaniModel vivahNodhaniModel = vivahNodhniRepository.getModel(entryId, VivahNodhaniModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\prop_tax\\" + propTaxModel.getGutNo() + "\\";
+		String LOCAL_FOLDER_PATH = "C:\\images\\prop_tax\\" + vivahNodhaniModel.getGattaNo() + "\\";
 		String rootPath = session.getServletContext().getRealPath("/");
-		fileHelper.copyFile(propTaxModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
+		fileHelper.copyFile(vivahNodhaniModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 
-		ModelAndView modelAndView = new ModelAndView(VIEW_URL, MODEL_NAME, propTaxModel);
+		ModelAndView modelAndView = new ModelAndView(VIEW_URL, MODEL_NAME, vivahNodhaniModel);
 		modelAndView.addObject("show", true);
 		modelAndView.addObject("UPLOAD_URL", UPLOAD_URL);
 		modelAndView.addObject("SEARCH_URL", SEARCH_URL);
@@ -121,8 +121,5 @@ public class PropTaxController extends BaseController {
 
 		return "redirect:/" + UPLOAD_URL;
 	}
-	
-	
-	
 	
 }

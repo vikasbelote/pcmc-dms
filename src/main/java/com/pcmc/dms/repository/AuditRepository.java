@@ -10,6 +10,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.model.AuditModel;
+import com.pcmc.dms.model.PropTaxModel;
 
 @Component
 public class AuditRepository extends BaseRepository {
@@ -18,30 +19,16 @@ public class AuditRepository extends BaseRepository {
 
 		List<AuditModel> list = null;
 
-		Session session = hibernateTemplate.getSessionFactory().openSession();
-		Transaction tx = session.beginTransaction();
-
 		StringBuffer sb = new StringBuffer();
-		sb.append(
-				"select row_id,gut_no,gatta_no,doc_no,vibhag_name ");
+		sb.append("select row_id,gut_no,gatta_no,doc_no,vibhag_name ");
 		sb.append("from dms_audit ");
-		sb.append("where gut_no like CONCAT(TRIM(IFNULL('" + auditModel.getGutNo() + "', '')), '%') ");
-		sb.append("and gatta_no like CONCAT(TRIM(IFNULL('" + auditModel.getGattaNo() + "', '')), '%') ");
-		sb.append("and doc_no like CONCAT(TRIM(IFNULL('" + auditModel.getDocNo() + "', '')), '%') ");
-		sb.append("and vibhag_name like CONCAT(TRIM(IFNULL('" + auditModel.getVibhagName() + "', '')), '%') ");
+		sb.append("where (gut_no like CONCAT(TRIM(IFNULL('" + auditModel.getGutNo() + "', '')), '%') or gut_no is null) ");
+		sb.append("and (gatta_no like CONCAT(TRIM(IFNULL('" + auditModel.getGattaNo() + "', '')), '%')  or gatta_no is null) ");
+		sb.append("and (doc_no like CONCAT(TRIM(IFNULL('" + auditModel.getDocNo() + "', '')), '%')  or doc_no is null) ");
+		sb.append("and (vibhag_name like CONCAT(TRIM(IFNULL('" + auditModel.getVibhagName() + "', '')), '%')  or vibhag_name is null) ");
 		sb.append("LIMIT 100");
 
-		SQLQuery hibQuery = session.createSQLQuery(sb.toString());
-
-		Object obj = hibQuery.list();
-		if (obj != null) {
-			@SuppressWarnings("unchecked")
-			List<AuditModel> listDb = (List<AuditModel>) obj;
-			list = listDb;
-		}
-
-		tx.commit();
-		session.close();
+		list = super.getList(sb.toString(),AuditModel.class);
 
 		return list;
 	}

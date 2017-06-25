@@ -38,6 +38,7 @@
 								<li><a href="Rack">Rack</a></li>
 								<li><a href="RecordType">Record Type</a></li>
 								<li><a href="Department">Department</a></li>
+								<li><a href="Prabhag">Prabhag</a></li>
 							</ul></li>
 
 					</c:when>
@@ -53,6 +54,7 @@
 								<li><a href="Rack">Rack</a></li>
 								<li><a href="RecordType">Record Type</a></li>
 								<li><a href="Department">Department</a></li>
+								<li><a href="Prabhag">Prabhag</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
@@ -89,6 +91,7 @@
 								<li><a href="uploadDataLaw">Law</a></li>
 								<li><a href="uploadDataAudit">Audit</a></li>
 								<li><a href="uploadDataBup">Building Permission</a></li>
+								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -99,6 +102,7 @@
 								<li><a href="uploadDataLaw">Law</a></li>
 								<li><a href="uploadDataAudit">Audit</a></li>
 								<li><a href="uploadDataBup">Building Permission</a></li>
+								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
