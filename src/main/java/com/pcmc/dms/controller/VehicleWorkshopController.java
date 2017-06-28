@@ -86,7 +86,7 @@ public class VehicleWorkshopController extends BaseController {
 		VehicleWorkshopModel vehicleWorkshopModel = vehicleWorkshopRepository.getModel(entryId, VehicleWorkshopModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\audit\\";
+		String LOCAL_FOLDER_PATH = "C:\\images\\vehicle_workshop\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(vehicleWorkshopModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

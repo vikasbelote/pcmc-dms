@@ -92,6 +92,7 @@
 								<li><a href="uploadDataAudit">Audit</a></li>
 								<li><a href="uploadDataBup">Building Permission</a></li>
 								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
+								<li><a href="uploadDataVehicleWorkshop">Vehicle Workshop</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -103,6 +104,7 @@
 								<li><a href="uploadDataAudit">Audit</a></li>
 								<li><a href="uploadDataBup">Building Permission</a></li>
 								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
+								<li><a href="uploadDataVehicleWorkshop">Vehicle Workshop</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>

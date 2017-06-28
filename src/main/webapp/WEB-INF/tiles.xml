@@ -181,5 +181,9 @@
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
        <put-attribute name="body" value="/WEB-INF/views/upload/vivah/uploadDataVivahNodhani.jsp" />  
    </definition>
+   <definition name="uploadDataVehicleWorkshop" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/vehicleWorkshop/uploadDataVehicleWorkshop.jsp" />  
+   </definition>
   
 </tiles-definitions>

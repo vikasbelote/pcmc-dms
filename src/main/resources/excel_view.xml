@@ -9,5 +9,6 @@
     <bean id="auditTemplate" class="com.pcmc.dms.view.AuditTemplate" />
     <bean id="bupTemplate" class="com.pcmc.dms.view.BupTemplate" />
     <bean id="vivahNodhaniTemplate" class="com.pcmc.dms.view.VivahNodhaniTemplate" />
+    <bean id="vehicleWorkshopTemplate" class="com.pcmc.dms.view.VehicleWorkshopTemplate" />
      
 </beans>
