@@ -147,6 +147,19 @@
        <put-attribute name="body" value="/WEB-INF/views/vivahnodhani/upload.jsp" />  
    </definition>
    
+   <!-- Vehicle Workshop -->
+   <definition name="searchVehicleWorkshop" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/vehicleWorkshop/search.jsp" />  
+   </definition> 
+   
+    <definition name="viewVehicleWorkshop" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/vehicleWorkshop/view.jsp" />  
+   </definition>
+   
+   <definition name="uploadVehicleWorkshop" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/vehicleWorkshop/upload.jsp" />  
+   </definition>
+   
     <!-- Upload -->
    <definition name="uploadDataPropTax" extends="base-definition">    
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  

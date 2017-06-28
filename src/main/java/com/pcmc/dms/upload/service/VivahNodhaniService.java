@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
+import com.pcmc.dms.helper.UnicodeHelper;
 import com.pcmc.dms.model.VivahNodhaniModel;
 import com.pcmc.dms.repository.VivahNodhniRepository;
 
@@ -66,7 +67,8 @@ public class VivahNodhaniService {
 				}
 				case 1: {
 					String entityName = String.valueOf(obj);
-					vivahNodhaniModel.setEntityName(entityName);
+					if(entityName != null)
+						vivahNodhaniModel.setEntityName(UnicodeHelper.stringToHTMLString(entityName));
 					break;
 				}
 				case 2: {
