@@ -160,6 +160,19 @@
        <put-attribute name="body" value="/WEB-INF/views/vehicleWorkshop/upload.jsp" />  
    </definition>
    
+    <!-- Krida Vibhag -->
+   <definition name="searchKridaVibhag" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/krida/search.jsp" />  
+   </definition> 
+   
+    <definition name="viewKridaVibhag" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/krida/view.jsp" />  
+   </definition>
+   
+   <definition name="uploadKridaVibhag" extends="base-definition">    
+       <put-attribute name="body" value="/WEB-INF/views/krida/upload.jsp" />  
+   </definition>
+   
     <!-- Upload -->
    <definition name="uploadDataPropTax" extends="base-definition">    
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
@@ -185,5 +198,10 @@
    	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
        <put-attribute name="body" value="/WEB-INF/views/upload/vehicleWorkshop/uploadDataVehicleWorkshop.jsp" />  
    </definition>
+   <definition name="uploadDataKridaVibhag" extends="base-definition">    
+   	   <put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/upload/krida/uploadDataKridaVibhag.jsp" />  
+   </definition>
+  
   
 </tiles-definitions>

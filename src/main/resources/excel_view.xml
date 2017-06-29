@@ -10,5 +10,6 @@
     <bean id="bupTemplate" class="com.pcmc.dms.view.BupTemplate" />
     <bean id="vivahNodhaniTemplate" class="com.pcmc.dms.view.VivahNodhaniTemplate" />
     <bean id="vehicleWorkshopTemplate" class="com.pcmc.dms.view.VehicleWorkshopTemplate" />
+    <bean id="kridaVibhagTemplate" class="com.pcmc.dms.view.KridaVibhagTemplate" />
      
 </beans>

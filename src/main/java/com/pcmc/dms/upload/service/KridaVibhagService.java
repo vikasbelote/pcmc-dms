@@ -16,19 +16,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
-import com.pcmc.dms.helper.UnicodeHelper;
-import com.pcmc.dms.model.VehicleWorkshopModel;
-import com.pcmc.dms.repository.VehicleWorkshopRepository;
+import com.pcmc.dms.model.KridaVibhagModel;
+import com.pcmc.dms.repository.KridaVibhagRepository;
 
 @Component
-public class VehicleWorkshopService {
-
+public class KridaVibhagService {
+	
 	@Autowired
-	private VehicleWorkshopRepository vehicleWorkshopRepository;
+	private KridaVibhagRepository kridaVibhagRepository;
 
 	public void readBooksFromExcelFile(String excelFilePath) throws IOException {
 
-		List<VehicleWorkshopModel> list = new ArrayList<VehicleWorkshopModel>();
+		List<KridaVibhagModel> list = new ArrayList<KridaVibhagModel>();
 		FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
 		Workbook workbook = new XSSFWorkbook(inputStream);
@@ -44,7 +43,7 @@ public class VehicleWorkshopService {
 			}
 
 			Iterator<Cell> cellIterator = nextRow.cellIterator();
-			VehicleWorkshopModel vehicleWorkshopModel = new VehicleWorkshopModel();
+			KridaVibhagModel kridaVibahgModel = new KridaVibhagModel();
 
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
@@ -57,35 +56,25 @@ public class VehicleWorkshopService {
 
 				switch (columnIndex) {
 				case 0: {
-					String tableNumber = String.valueOf(obj);
-					vehicleWorkshopModel.setTableNumber(tableNumber);
+					String nastiNumber = String.valueOf(obj);
+					kridaVibahgModel.setNastiNumber(nastiNumber);
 					break;
 				}
 				case 1: {
-					String nastiName = String.valueOf(obj);
-					if(nastiName != null)
-						vehicleWorkshopModel.setNastiName(UnicodeHelper.stringToHTMLString(nastiName));
-					break;
-				}
-				case 2: {
-					String nastiNumber = String.valueOf(obj);
-					vehicleWorkshopModel.setNastiNumber(nastiNumber);
-					break;
-				}
-				case 3: {
 					String imagePath = String.valueOf(obj);
-					vehicleWorkshopModel.setImagePath(imagePath);
+					kridaVibahgModel.setImagePath(imagePath);
 					break;
 				}
 				}
 			}
-			list.add(vehicleWorkshopModel);
+			list.add(kridaVibahgModel);
 		}
 		workbook.close();
 		inputStream.close();
 
 		// Save into database
-		vehicleWorkshopRepository.saveList(list);
+		kridaVibhagRepository.saveList(list);
 	}
+
 
 }

@@ -93,6 +93,7 @@
 								<li><a href="uploadDataBup">Building Permission</a></li>
 								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
 								<li><a href="uploadDataVehicleWorkshop">Vehicle Workshop</a></li>
+								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -105,6 +106,7 @@
 								<li><a href="uploadDataBup">Building Permission</a></li>
 								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
 								<li><a href="uploadDataVehicleWorkshop">Vehicle Workshop</a></li>
+								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
