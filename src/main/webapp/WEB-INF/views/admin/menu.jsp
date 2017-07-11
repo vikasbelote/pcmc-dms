@@ -110,6 +110,14 @@
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
+				<c:choose>
+					<c:when test="${ reportMenu }">
+						<li class="active"><a href="report">Report</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="report">Report</a></li>
+					</c:otherwise>
+				</c:choose>
 
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
