@@ -26,6 +26,7 @@
 				<div class="tree-branch-header">\
 					<span class="tree-branch-name">\
 						<i class="icon-folder '+$options['close-icon']+'"></i>\
+						<input type="checkbox" name="userRight" style="display:none;" />\
 						<span class="tree-label"></span>\
 					</span>\
 				</div>\
@@ -35,6 +36,7 @@
 			<li class="tree-item hide" data-template="treeitem" role="treeitem">\
 				<span class="tree-item-name">\
 				  '+($options['unselected-icon'] == null ? '' : '<i class="icon-item '+$options['unselected-icon']+'"></i>')+'\
+				  <input type="checkbox" name="userRight" style="display:none;" />\
 				  <span class="tree-label"></span>\
 				</span>\
 			</li>');
