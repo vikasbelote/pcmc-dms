@@ -1,1 +1,7 @@
-*.class
+/target/
+.idea/
+
+/.classpath
+/.project
+/.checkstyle
+/.settings/
