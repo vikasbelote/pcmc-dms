@@ -11,5 +11,9 @@
     <bean id="vivahNodhaniTemplate" class="com.pcmc.dms.view.VivahNodhaniTemplate" />
     <bean id="vehicleWorkshopTemplate" class="com.pcmc.dms.view.VehicleWorkshopTemplate" />
     <bean id="kridaVibhagTemplate" class="com.pcmc.dms.view.KridaVibhagTemplate" />
-     
+    <bean id="AccountTemplate" class="com.pcmc.dms.view.AccountTemplate" />
+    <bean id="FireBrigadeTemplate" class="com.pcmc.dms.view.FireBrigadeTemplate" />
+    <bean id="NagarSachivTemplate" class="com.pcmc.dms.view.NagarSachivTemplate" />
+    <bean id="PrashasanTemplate" class="com.pcmc.dms.view.PrashasanTemplate" />
+    <bean id="VidhutVibhagTemplate" class="com.pcmc.dms.view.VidhutVibhagTemplate" />
 </beans>

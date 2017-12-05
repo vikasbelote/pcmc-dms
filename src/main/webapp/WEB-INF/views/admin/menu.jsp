@@ -39,6 +39,7 @@
 								<li><a href="RecordType">Record Type</a></li>
 								<li><a href="Department">Department</a></li>
 								<li><a href="Prabhag">Prabhag</a></li>
+								<li><a href="BodyName">Body Name</a></li>
 							</ul></li>
 
 					</c:when>
@@ -55,6 +56,7 @@
 								<li><a href="RecordType">Record Type</a></li>
 								<li><a href="Department">Department</a></li>
 								<li><a href="Prabhag">Prabhag</a></li>
+								<li><a href="BodyName">Body Name</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
@@ -94,6 +96,11 @@
 								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
 								<li><a href="uploadDataVehicleWorkshop">Vehicle Workshop</a></li>
 								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
+								<li><a href="uploadDataAccount">Account</a></li>
+								<li><a href="uploadDataFireBrigade">Fire Brigade</a></li>
+								<li><a href="uploadDataNagarSachiv">Nagar Sachiv</a></li>
+								<li><a href="uploadDataPrashasan">Prashasan</a></li>
+								<li><a href="uploadDataVidhutVibhag">Vidhut Vibhag</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -106,7 +113,11 @@
 								<li><a href="uploadDataBup">Building Permission</a></li>
 								<li><a href="uploadDataVivahNodhani">Vivah Nodhani</a></li>
 								<li><a href="uploadDataVehicleWorkshop">Vehicle Workshop</a></li>
-								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
+								<li><a href="uploadDataAccount">Account</a></li>
+								<li><a href="uploadDataFireBrigade">Fire Brigade</a></li>
+								<li><a href="uploadDataNagarSachiv">Nagar Sachiv</a></li>
+								<li><a href="uploadDataPrashasan">Prashasan</a></li>
+								<li><a href="uploadDataVidhutVibhag">Vidhut Vibhag</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>

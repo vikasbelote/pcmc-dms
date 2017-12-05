@@ -82,6 +82,11 @@
 		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/master/prabhag.jsp" />
 	</definition>
+	
+	<definition name="bodyName" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/master/bodyName.jsp" />
+	</definition>
 
 	<!-- Audit -->
 	<definition name="search" extends="base-definition">
@@ -180,6 +185,71 @@
 	<definition name="uploadKridaVibhag" extends="base-definition">
 		<put-attribute name="body" value="/WEB-INF/views/krida/upload.jsp" />
 	</definition>
+	
+	<!-- Account -->
+	<definition name="searchAccount" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/account/search.jsp" />
+	</definition>
+
+	<definition name="viewAccount" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/account/view.jsp" />
+	</definition>
+
+	<definition name="uploadAccount" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/account/upload.jsp" />
+	</definition>
+	
+	<!-- Fire Brigade -->
+	<definition name="searchFireBrigade" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/fireBrigade/search.jsp" />
+	</definition>
+
+	<definition name="viewFireBrigade" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/fireBrigade/view.jsp" />
+	</definition>
+
+	<definition name="uploadFireBrigade" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/fireBrigade/upload.jsp" />
+	</definition>
+	
+	<!-- Nagar Sachiv -->
+	<definition name="searchNagarSachiv" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/nagarSachiv/search.jsp" />
+	</definition>
+
+	<definition name="viewNagarSachiv" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/nagarSachiv/view.jsp" />
+	</definition>
+
+	<definition name="uploadNagarSachiv" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/nagarSachiv/upload.jsp" />
+	</definition>
+	
+	<!-- Prashasan -->
+	<definition name="searchPrashasan" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/prashasan/search.jsp" />
+	</definition>
+
+	<definition name="viewPrashasan" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/prashasan/view.jsp" />
+	</definition>
+
+	<definition name="uploadPrashasan" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/prashasan/upload.jsp" />
+	</definition>
+	
+	<!-- Vidhut Vibhag -->
+	<definition name="searchVidhutVibhag" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/vidhutVibhag/search.jsp" />
+	</definition>
+
+	<definition name="viewVidhutVibhag" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/vidhutVibhag/view.jsp" />
+	</definition>
+
+	<definition name="uploadVidhutVibhag" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/vidhutVibhag/upload.jsp" />
+	</definition>
 
 	<!-- Upload -->
 	<definition name="uploadDataPropTax" extends="base-definition">
@@ -216,6 +286,20 @@
 		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/upload/krida/uploadDataKridaVibhag.jsp" />
+	</definition>
+	<definition name="uploadDataAccount" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/upload/account/uploadDataAccount.jsp" />
+	</definition>
+	<definition name="uploadDataFireBrigade" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/upload/fire_brigade/uploadDataFireBrigade.jsp" />
+	</definition>
+	<definition name="uploadData" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/upload/uploadData.jsp" />
 	</definition>
 
 	<!-- Report -->
