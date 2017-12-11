@@ -87,6 +87,21 @@
 		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/master/bodyName.jsp" />
 	</definition>
+	
+	<definition name="nagarName" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/master/nagarName.jsp" />
+	</definition>
+	
+	<definition name="ycmh" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/master/ycmh.jsp" />
+	</definition>
+	
+	<definition name="dispensaries" extends="base-definition">
+		<put-attribute name="menu" value="/WEB-INF/views/admin/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/master/dispensaries.jsp" />
+	</definition>
 
 	<!-- Audit -->
 	<definition name="search" extends="base-definition">
@@ -249,6 +264,84 @@
 
 	<definition name="uploadVidhutVibhag" extends="base-definition">
 		<put-attribute name="body" value="/WEB-INF/views/vidhutVibhag/upload.jsp" />
+	</definition>
+	
+	<!-- Nagri Suvidha -->
+	<definition name="searchNagriSuvidha" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/nagriSuvidha/search.jsp" />
+	</definition>
+
+	<definition name="viewNagriSuvidha" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/nagriSuvidha/view.jsp" />
+	</definition>
+
+	<definition name="uploadNagriSuvidha" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/nagriSuvidha/upload.jsp" />
+	</definition>
+	
+	<!-- ITI -->
+	<definition name="searchIti" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/iti/search.jsp" />
+	</definition>
+
+	<definition name="viewIti" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/iti/view.jsp" />
+	</definition>
+
+	<definition name="uploadIti" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/iti/upload.jsp" />
+	</definition>
+	
+	<!-- ZONIPU -->
+	<definition name="searchZonipu" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/zonipu/search.jsp" />
+	</definition>
+
+	<definition name="viewZonipu" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/zonipu/view.jsp" />
+	</definition>
+
+	<definition name="uploadZonipu" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/zonipu/upload.jsp" />
+	</definition>
+	
+	<!-- BHOOMI -->
+	<definition name="searchBhoomi" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/bhoomi/search.jsp" />
+	</definition>
+
+	<definition name="viewBhoomi" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/bhoomi/view.jsp" />
+	</definition>
+
+	<definition name="uploadBhoomi" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/bhoomi/upload.jsp" />
+	</definition>
+	
+	<!-- BHUYARI -->
+	<definition name="searchBhuyari" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/bhuyari/search.jsp" />
+	</definition>
+
+	<definition name="viewBhuyari" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/bhuyari/view.jsp" />
+	</definition>
+
+	<definition name="uploadBhuyari" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/bhuyari/upload.jsp" />
+	</definition>
+	
+		<!-- Medical -->
+	<definition name="searchMedical" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/medical/search.jsp" />
+	</definition>
+
+	<definition name="viewMedical" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/medical/view.jsp" />
+	</definition>
+
+	<definition name="uploadMedical" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/medical/upload.jsp" />
 	</definition>
 
 	<!-- Upload -->

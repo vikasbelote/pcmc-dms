@@ -12,6 +12,8 @@
 	media="screen" />
 <link href="./static/assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="./static/assets/css/nav-bar.css" rel="stylesheet">
+<script src="./static/assets/js/jquery-3.1.0.min.js"></script>
+<script src="./static/assets/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<tiles:insertAttribute name="header" />
@@ -19,7 +21,5 @@
 		<tiles:insertAttribute name="menu" />
 		<tiles:insertAttribute name="body" />
 	</div>
-	<script src="./static/assets/js/jquery-3.1.0.min.js"></script>
-	<script src="./static/assets/js/bootstrap.min.js"></script>
 </body>
 </html>

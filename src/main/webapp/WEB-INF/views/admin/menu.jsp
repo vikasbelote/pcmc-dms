@@ -40,6 +40,9 @@
 								<li><a href="Department">Department</a></li>
 								<li><a href="Prabhag">Prabhag</a></li>
 								<li><a href="BodyName">Body Name</a></li>
+								<li><a href="NagarName">Nagar Name</a></li>
+								<li><a href="YCMH">YCMH</a></li>
+								<li><a href="Dispensaries">Dispensaries</a></li>
 							</ul></li>
 
 					</c:when>
@@ -57,6 +60,9 @@
 								<li><a href="Department">Department</a></li>
 								<li><a href="Prabhag">Prabhag</a></li>
 								<li><a href="BodyName">Body Name</a></li>
+								<li><a href="NagarName">Nagar Name</a></li>
+								<li><a href="YCMH">YCMH</a></li>
+								<li><a href="Dispensaries">Dispensaries</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
@@ -101,6 +107,10 @@
 								<li><a href="uploadDataNagarSachiv">Nagar Sachiv</a></li>
 								<li><a href="uploadDataPrashasan">Prashasan</a></li>
 								<li><a href="uploadDataVidhutVibhag">Vidhut Vibhag</a></li>
+								<li><a href="uploadDataNagriSuvidha">Nagri Suvidha</a></li>
+								<li><a href="uploadDataIti">ITI</a></li>
+								<li><a href="uploadDataZonipu">Zonipu</a></li>
+								<li><a href="uploadDataBhoomi">Bhoomi & Zinggi</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -118,6 +128,10 @@
 								<li><a href="uploadDataNagarSachiv">Nagar Sachiv</a></li>
 								<li><a href="uploadDataPrashasan">Prashasan</a></li>
 								<li><a href="uploadDataVidhutVibhag">Vidhut Vibhag</a></li>
+								<li><a href="uploadDataNagriSuvidha">Nagri Suvidha</a></li>
+								<li><a href="uploadDataIti">ITI</a></li>
+								<li><a href="uploadDataZonipu">Zonipu</a></li>
+								<li><a href="uploadDataBhoomi">Bhoomi & Zinggi</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>

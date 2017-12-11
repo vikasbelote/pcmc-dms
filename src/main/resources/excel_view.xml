@@ -16,4 +16,9 @@
     <bean id="NagarSachivTemplate" class="com.pcmc.dms.view.NagarSachivTemplate" />
     <bean id="PrashasanTemplate" class="com.pcmc.dms.view.PrashasanTemplate" />
     <bean id="VidhutVibhagTemplate" class="com.pcmc.dms.view.VidhutVibhagTemplate" />
+    <bean id="NagriSuvidhaTemplate" class="com.pcmc.dms.view.NagriSuvidhaTemplate" />
+    <bean id="ItiTemplate" class="com.pcmc.dms.view.ItiTemplate" />
+    <bean id="ZonipuTemplate" class="com.pcmc.dms.view.ZonipuTemplate" />
+    <bean id="BhoomiTemplate" class="com.pcmc.dms.view.BhoomiTemplate" />
+    <bean id="BhuyariTemplate" class="com.pcmc.dms.view.BhuyariTemplate" />
 </beans>
