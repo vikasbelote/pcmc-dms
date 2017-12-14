@@ -16,19 +16,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pcmc.dms.helper.CellValueHelper;
-import com.pcmc.dms.helper.UnicodeHelper;
-import com.pcmc.dms.model.ZonipuModel;
-import com.pcmc.dms.repository.ZonipuRepository;
+import com.pcmc.dms.model.TownModel;
+import com.pcmc.dms.repository.TownRepository;
 
 @Service
-public class ZonipuService {
+public class TownService {
 	
 	@Autowired
-	private ZonipuRepository repository;
+	private TownRepository repository;
 
 	public void readBooksFromExcelFile(String excelFilePath) throws IOException {
 
-		List<ZonipuModel> list = new ArrayList<ZonipuModel>();
+		List<TownModel> list = new ArrayList<TownModel>();
 		FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
 		Workbook workbook = new XSSFWorkbook(inputStream);
@@ -44,7 +43,7 @@ public class ZonipuService {
 			}
 
 			Iterator<Cell> cellIterator = nextRow.cellIterator();
-			ZonipuModel model = new ZonipuModel();
+			TownModel model = new TownModel();
 
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
@@ -57,28 +56,16 @@ public class ZonipuService {
 
 				switch (columnIndex) {
 				case 0: {
-					String nagarName = String.valueOf(obj);
-					model.setNagarName(nagarName);
+					String villageName = String.valueOf(obj);
+					model.setVillageName(villageName);
 					break;
 				}
 				case 1: {
-					String personName = String.valueOf(obj);
-					if(personName != null)
-						model.setPersonName(UnicodeHelper.stringToHTMLString(personName));
-					break;
-				}
-				case 2: {
-					String roomNumber = String.valueOf(obj);
-					if(roomNumber != null)
-						model.setRoomNumber(UnicodeHelper.stringToHTMLString(roomNumber));
+					String sheetNumber = String.valueOf(obj);
+					model.setSheetNumber(sheetNumber);
 					break;
 				}
 				case 3: {
-					String fileNumber = String.valueOf(obj);
-					model.setFileNumber(fileNumber);
-					break;
-				}
-				case 4: {
 					String imagePath = String.valueOf(obj);
 					model.setImagePath(imagePath);
 					break;
@@ -93,4 +80,5 @@ public class ZonipuService {
 		// Save into database
 		repository.saveList(list);
 	}
+
 }

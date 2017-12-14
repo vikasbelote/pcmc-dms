@@ -21,4 +21,6 @@
     <bean id="ZonipuTemplate" class="com.pcmc.dms.view.ZonipuTemplate" />
     <bean id="BhoomiTemplate" class="com.pcmc.dms.view.BhoomiTemplate" />
     <bean id="BhuyariTemplate" class="com.pcmc.dms.view.BhuyariTemplate" />
+    <bean id="MedicalTemplate" class="com.pcmc.dms.view.MedicalTemplate" />
+    <bean id="TownTemplate" class="com.pcmc.dms.view.TownTemplate" />
 </beans>

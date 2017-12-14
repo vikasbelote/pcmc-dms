@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
+import com.pcmc.dms.helper.UnicodeHelper;
 import com.pcmc.dms.model.FireBrigadeModel;
 import com.pcmc.dms.repository.FireBrigadeRepository;
 
@@ -57,7 +58,8 @@ public class FireBrigadeService {
 				switch (columnIndex) {
 				case 0: {
 					String workingPersonName = String.valueOf(obj);
-					model.setWorkingPersonName(workingPersonName);
+					if(workingPersonName != null)
+						model.setWorkingPersonName(UnicodeHelper.stringToHTMLString(workingPersonName));
 					break;
 				}
 				case 1: {

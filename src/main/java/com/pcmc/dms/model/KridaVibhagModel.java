@@ -21,6 +21,9 @@ public class KridaVibhagModel {
 	@Column(name="nasti_number")
 	private String nastiNumber;
 	
+	@Column(name = "nasti_name")
+	private String nastiName;
+	
 	@Column(name="image_path")
 	private String imagePath;
 
@@ -46,5 +49,13 @@ public class KridaVibhagModel {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	public String getNastiName() {
+		return nastiName;
+	}
+
+	public void setNastiName(String nastiName) {
+		this.nastiName = nastiName;
 	}
 }

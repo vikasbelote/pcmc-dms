@@ -24,6 +24,9 @@ public class BhuyariModel {
 	@Column(name = "work_name")
 	private String workName;
 	
+	@Column(name = "tendor_name")
+	private String tendorName;
+	
 	@Column(name = "budget_tartude_number")
 	private String budgetTartudeNumber;
 	
@@ -68,5 +71,13 @@ public class BhuyariModel {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	public String getTendorName() {
+		return tendorName;
+	}
+
+	public void setTendorName(String tendorName) {
+		this.tendorName = tendorName;
 	}
 }

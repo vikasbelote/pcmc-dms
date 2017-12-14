@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
+import com.pcmc.dms.helper.UnicodeHelper;
 import com.pcmc.dms.model.BhuyariModel;
 import com.pcmc.dms.repository.BhuyariRepository;
 
@@ -62,15 +63,21 @@ public class BhuyariService {
 				}
 				case 1: {
 					String workName = String.valueOf(obj);
-					model.setWorkName(workName);
+					if(workName != null)
+						model.setWorkName(UnicodeHelper.stringToHTMLString(workName));
 					break;
 				}
 				case 2: {
+					String tendorName = String.valueOf(obj);
+					model.setTendorName(tendorName);
+					break;
+				}
+				case 3: {
 					String budgetTartudeNumber = String.valueOf(obj);
 					model.setBudgetTartudeNumber(budgetTartudeNumber);
 					break;
 				}
-				case 3: {
+				case 4: {
 					String imagePath = String.valueOf(obj);
 					model.setImagePath(imagePath);
 					break;

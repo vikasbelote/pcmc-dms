@@ -20,6 +20,13 @@
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right"
+				for="form-field-1">Tendor Name</label>
+			<div class="col-sm-3">
+				<form:input path="tendorName" class="col-sm-5 form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right"
 				for="form-field-1">Budget Tartude number</label>
 			<div class="col-sm-3">
 				<form:input path="budgetTartudeNumber" class="col-sm-5 form-control" />
@@ -46,6 +53,7 @@
 								<th><strong>Row Number</strong></th>
 								<th><strong>Nivada Number</strong></th>
 								<th><strong>Work Name</strong></th>
+								<th><strong>Tendor Name</strong></th>
 								<th><strong>Budget Tartude number</strong></th>
 								<th></th>
 							</tr>
@@ -57,6 +65,7 @@
 									<td>${ item[1]  }</td>
 									<td>${ item[2] }</td>
 									<td>${ item[3]  }</td>
+									<td>${ item[4]  }</td>
 									<td><a href="./${VIEW_URL}?id=${ item[0] }">View</a></td>
 								</tr>
 							</c:forEach>

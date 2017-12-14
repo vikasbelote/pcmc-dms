@@ -6,16 +6,16 @@
 		class="form-horizontal" action="${SEARCH_URL}">
 		<div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right"
-				for="form-field-1">Nasti Number</label>
+				for="form-field-1">Village Name</label>
 			<div class="col-sm-3">
-				<form:input path="nastiNumber" class="col-sm-5 form-control" />
+				<form:input path="villageName" class="col-sm-5 form-control" />
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right"
-				for="form-field-1">Nasti Name</label>
+				for="form-field-1">Sheet Number</label>
 			<div class="col-sm-3">
-				<form:input path="nastiName" class="col-sm-5 form-control" />
+				<form:input path="sheetNumber" class="col-sm-5 form-control" />
 			</div>
 		</div>
 		<div class="col-md-offset-3 col-md-3">
@@ -36,9 +36,9 @@
 						class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr>
-								<th><strong> &#2344;&#2306;&#2348;&#2352;</strong></th>
-								<th><strong>Nasti Number</strong></th>
-								<th><strong>Nasti Name</strong></th>
+								<th><strong>Row Number</strong></th>
+								<th><strong>Village Name</strong></th>
+								<th><strong>Sheet Number</strong></th>
 								<th></th>
 							</tr>
 						</thead>
@@ -47,7 +47,7 @@
 								<tr>
 									<td>${ item[0]  }</td>
 									<td>${ item[1]  }</td>
-									<td>${ item[2]  }</td>
+									<td>${ item[2] }</td>
 									<td><a href="./${VIEW_URL}?id=${ item[0] }">View</a></td>
 								</tr>
 							</c:forEach>
@@ -58,7 +58,6 @@
 					<div style="text-align: center;">
 						<h2>There is no data present for this search criteria.</h2>
 					</div>
-
 				</c:otherwise>
 			</c:choose>
 		</c:when>

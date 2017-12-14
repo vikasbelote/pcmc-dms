@@ -6,6 +6,13 @@
 		class="form-horizontal" action="${SEARCH_URL}">
 		<div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right"
+				for="form-field-1">Gatta Number</label>
+			<div class="col-sm-3">
+				<form:input path="gattaNumber" class="col-sm-5 form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right"
 				for="form-field-1">Financial Year</label>
 			<div class="col-sm-3">
 				<form:input path="financialYear" class="col-sm-5 form-control" />
@@ -37,6 +44,7 @@
 						<thead>
 							<tr>
 								<th><strong>Row Number</strong></th>
+								<th><strong>Gatta Number</strong></th>
 								<th><strong>Financial Year</strong></th>
 								<th><strong>Voucher Number</strong></th>
 								<th></th>
@@ -48,6 +56,7 @@
 									<td>${ item[0]  }</td>
 									<td>${ item[1]  }</td>
 									<td>${ item[2] }</td>
+									<td>${ item[3] }</td>
 									<td><a href="./${VIEW_URL}?id=${ item[0] }">View</a></td>
 								</tr>
 							</c:forEach>

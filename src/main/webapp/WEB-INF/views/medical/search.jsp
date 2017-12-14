@@ -34,7 +34,7 @@
 			<div class="col-sm-3">
 				<form:select path="hospital" cssClass="col-sm-5 form-control">
 					<form:option value="">Choose Hospital</form:option>
-					<form:options items="${hospitalMasterList " itemLabel="hospitalName" itemValue="hospitalName" />
+					<form:options items="${hospitalMasterList}" itemLabel="hospitalName" itemValue="hospitalName" />
 				</form:select>
 			</div>
 		</div>

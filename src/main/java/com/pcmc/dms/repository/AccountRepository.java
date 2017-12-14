@@ -14,7 +14,7 @@ public class AccountRepository extends BaseRepository {
 		List<AccountModel> list = null;
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("select row_id,financial_year,voucher_number ");
+		sb.append("select row_id,gatta_number,financial_year,voucher_number ");
 		sb.append("from dms_account ");
 		sb.append("where (financial_year like CONCAT(TRIM(IFNULL('" + accountModel.getFinancialYear() + "', '')), '%') or financial_year is null) ");
 		sb.append("and (voucher_number like CONCAT(TRIM(IFNULL('" + accountModel.getVoucherNumber() + "', '')), '%')  or voucher_number is null) ");

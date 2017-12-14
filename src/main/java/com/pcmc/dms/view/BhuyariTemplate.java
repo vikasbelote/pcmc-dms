@@ -37,10 +37,13 @@ public class BhuyariTemplate extends AbstractXlsxView {
 		header.createCell(1).setCellValue("Work Name");
 		header.getCell(1).setCellStyle(style);
 		
-		header.createCell(2).setCellValue("Budget Tartude number");
+		header.createCell(2).setCellValue("Tendor Name");
 		header.getCell(2).setCellStyle(style);
 		
-		header.createCell(3).setCellValue("Image Name");
+		header.createCell(3).setCellValue("Budget Tartude number");
 		header.getCell(3).setCellStyle(style);
+		
+		header.createCell(4).setCellValue("Image Name");
+		header.getCell(4).setCellStyle(style);
 	}
 }

@@ -11,6 +11,12 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<label class="col-sm-3 control-label" for="form-field-1">Nasti Name</label>
+			<div class="col-sm-9" style="text-align: left;">
+				<form:input path="nastiName" class="col-sm-5 form-control" />
+			</div>
+		</div>
+		<div class="form-group">
 			<div class="col-md-offset-3 col-md-3">
 				<a href="./${SEARCH_URL}" class="btn btn-sm btn-primary" type="button"> <i
 					class="ace-icon fa fa-check bigger-110"></i> Back

@@ -5,9 +5,14 @@
 	<form:form id="some-form" commandName="${MODEL_NAME}"
 		class="form-horizontal">
 		<div class="form-group">
+			<label class="col-sm-3 control-label" for="form-field-1">Gatta Number</label>
+			<div class="col-sm-9" style="text-align: left;">
+				<form:input path="gattaNumber" class="col-sm-5 form-control" />
+			</div>
+		</div>
+		<div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">Financial Year</label>
 			<div class="col-sm-9" style="text-align: left;">
-				
 				<form:input path="financialYear" class="col-sm-5 form-control" />
 			</div>
 		</div>

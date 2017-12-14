@@ -343,6 +343,20 @@
 	<definition name="uploadMedical" extends="base-definition">
 		<put-attribute name="body" value="/WEB-INF/views/medical/upload.jsp" />
 	</definition>
+	
+	<!-- Town -->
+	<definition name="searchTown" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/town/search.jsp" />
+	</definition>
+
+	<definition name="viewTown" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/town/view.jsp" />
+	</definition>
+
+	<definition name="uploadTown" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/town/upload.jsp" />
+	</definition>
+	
 
 	<!-- Upload -->
 	<definition name="uploadDataPropTax" extends="base-definition">

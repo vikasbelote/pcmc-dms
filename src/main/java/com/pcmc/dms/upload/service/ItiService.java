@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
+import com.pcmc.dms.helper.UnicodeHelper;
 import com.pcmc.dms.model.ItiModel;
 import com.pcmc.dms.repository.ItiRepository;
 
@@ -67,7 +68,8 @@ public class ItiService {
 				}
 				case 2: {
 					String nastiName = String.valueOf(obj);
-					model.setNastiName(nastiName);
+					if(nastiName != null)
+						model.setNastiName(UnicodeHelper.stringToHTMLString(nastiName));
 					break;
 				}
 				case 3: {

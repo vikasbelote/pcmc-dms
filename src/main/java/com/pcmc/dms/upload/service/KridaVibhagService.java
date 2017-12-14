@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
+import com.pcmc.dms.helper.UnicodeHelper;
 import com.pcmc.dms.model.KridaVibhagModel;
 import com.pcmc.dms.repository.KridaVibhagRepository;
 
@@ -57,10 +58,17 @@ public class KridaVibhagService {
 				switch (columnIndex) {
 				case 0: {
 					String nastiNumber = String.valueOf(obj);
-					kridaVibahgModel.setNastiNumber(nastiNumber);
+					if(nastiNumber != null)
+						kridaVibahgModel.setNastiNumber(nastiNumber);
 					break;
 				}
 				case 1: {
+					String nastiName = String.valueOf(obj);
+					if(nastiName != null)
+						kridaVibahgModel.setNastiName(UnicodeHelper.stringToHTMLString(nastiName));
+					break;
+				}
+				case 2: {
 					String imagePath = String.valueOf(obj);
 					kridaVibahgModel.setImagePath(imagePath);
 					break;

@@ -17,18 +17,18 @@ import org.springframework.stereotype.Service;
 
 import com.pcmc.dms.helper.CellValueHelper;
 import com.pcmc.dms.helper.UnicodeHelper;
-import com.pcmc.dms.model.ZonipuModel;
-import com.pcmc.dms.repository.ZonipuRepository;
+import com.pcmc.dms.model.MedicalModel;
+import com.pcmc.dms.repository.MedicalRepository;
 
 @Service
-public class ZonipuService {
+public class MedicalService {
 	
 	@Autowired
-	private ZonipuRepository repository;
+	private MedicalRepository repository;
 
 	public void readBooksFromExcelFile(String excelFilePath) throws IOException {
 
-		List<ZonipuModel> list = new ArrayList<ZonipuModel>();
+		List<MedicalModel> list = new ArrayList<MedicalModel>();
 		FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
 		Workbook workbook = new XSSFWorkbook(inputStream);
@@ -44,7 +44,7 @@ public class ZonipuService {
 			}
 
 			Iterator<Cell> cellIterator = nextRow.cellIterator();
-			ZonipuModel model = new ZonipuModel();
+			MedicalModel model = new MedicalModel();
 
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
@@ -57,28 +57,47 @@ public class ZonipuService {
 
 				switch (columnIndex) {
 				case 0: {
-					String nagarName = String.valueOf(obj);
-					model.setNagarName(nagarName);
+					String headOffice = String.valueOf(obj);
+					model.setHeadOffice(headOffice);
 					break;
 				}
 				case 1: {
-					String personName = String.valueOf(obj);
-					if(personName != null)
-						model.setPersonName(UnicodeHelper.stringToHTMLString(personName));
+					String ycmh = String.valueOf(obj);
+					model.setYcmh(ycmh);
 					break;
 				}
 				case 2: {
-					String roomNumber = String.valueOf(obj);
-					if(roomNumber != null)
-						model.setRoomNumber(UnicodeHelper.stringToHTMLString(roomNumber));
+					String hospital = String.valueOf(obj);
+					model.setHospital(hospital);
 					break;
 				}
 				case 3: {
+					String dispensaries = String.valueOf(obj);
+					if(dispensaries != null)
+						model.setDispensaries(UnicodeHelper.stringToHTMLString(dispensaries));
+					break;
+				}
+				case 4: {
+					String period = String.valueOf(obj);
+					model.setPeriod(period);
+					break;
+				}
+				case 5: {
+					String tableNumber = String.valueOf(obj);
+					model.setTableNumber(tableNumber);
+					break;
+				}
+				case 6: {
 					String fileNumber = String.valueOf(obj);
 					model.setFileNumber(fileNumber);
 					break;
 				}
-				case 4: {
+				case 7: {
+					String keyward = String.valueOf(obj);
+					model.setKeyward(keyward);
+					break;
+				}
+				case 8: {
 					String imagePath = String.valueOf(obj);
 					model.setImagePath(imagePath);
 					break;
@@ -93,4 +112,5 @@ public class ZonipuService {
 		// Save into database
 		repository.saveList(list);
 	}
+
 }

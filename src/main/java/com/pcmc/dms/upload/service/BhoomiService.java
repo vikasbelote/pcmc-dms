@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pcmc.dms.helper.CellValueHelper;
+import com.pcmc.dms.helper.UnicodeHelper;
 import com.pcmc.dms.model.BhoomiModel;
 import com.pcmc.dms.repository.BhoomiRepository;
 
@@ -62,7 +63,8 @@ public class BhoomiService {
 				}
 				case 1: {
 					String subjectName = String.valueOf(obj);
-					model.setSubjectName(subjectName);
+					if(subjectName != null)
+						model.setSubjectName(UnicodeHelper.stringToHTMLString(subjectName));
 					break;
 				}
 				case 2: {

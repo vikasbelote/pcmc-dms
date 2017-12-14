@@ -5,27 +5,15 @@
 	<form:form id="some-form" commandName="${MODEL_NAME}"
 		class="form-horizontal">
 		<div class="form-group">
-			<label class="col-sm-3 control-label" for="form-field-1">Nivada Number</label>
+			<label class="col-sm-3 control-label" for="form-field-1">Village Name</label>
 			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="nivadaNumber" class="col-sm-5 form-control" />
+				<form:input path="villageName" class="col-sm-5 form-control" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-3 control-label" for="form-field-1">Work Name</label>
+			<label class="col-sm-3 control-label" for="form-field-1">Sheet Number</label>
 			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="workName" class="col-sm-5 form-control" />
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-3 control-label" for="form-field-1">Tendor Name</label>
-			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="tendorName" class="col-sm-5 form-control" />
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-3 control-label" for="form-field-1">Budget Tartude number</label>
-			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="budgetTartudeNumber" class="col-sm-5 form-control" />
+				<form:input path="sheetNumber" class="col-sm-5 form-control" />
 			</div>
 		</div>
 		<div class="form-group">
@@ -42,12 +30,12 @@
 <div class="col-sm-8">
 	<c:choose>
 		<c:when test="${ sessionScope.print || sessionScope.download }">
-			<embed src="./static/images/${ bhuyariModel.getImagePath() }.pdf"
+			<embed src="./static/images/${ townModel.getImagePath() }.pdf"
 				width="800px" height="600px" style="border: solid 2px black" />
 		</c:when>
 		<c:otherwise>
 			<embed
-				src="./static/images/${ bhuyariModel.getImagePath() }.pdf#toolbar=0"
+				src="./static/images/${ townModel.getImagePath() }.pdf#toolbar=0"
 				width="800px" height="600px" style="border: solid 2px black" />
 		</c:otherwise>
 	</c:choose>

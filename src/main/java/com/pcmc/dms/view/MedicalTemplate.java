@@ -12,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.springframework.web.servlet.view.document.AbstractXlsxView;
 
-public class KridaVibhagTemplate extends AbstractXlsxView {
+public class MedicalTemplate  extends AbstractXlsxView {
 	
 	@Override
 	protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request,
@@ -31,13 +31,31 @@ public class KridaVibhagTemplate extends AbstractXlsxView {
 		// create header row
 		XSSFRow header = sheet.createRow(0);
 
-		header.createCell(0).setCellValue("Nasti Number");
+		header.createCell(0).setCellValue("Head Office");
 		header.getCell(0).setCellStyle(style);
 		
-		header.createCell(1).setCellValue("Nasti Name");
+		header.createCell(1).setCellValue("YCMH");
 		header.getCell(1).setCellStyle(style);
-
-		header.createCell(2).setCellValue("Image Name");
+		
+		header.createCell(2).setCellValue("Hospital");
 		header.getCell(2).setCellStyle(style);
+		
+		header.createCell(3).setCellValue("Dispensaries");
+		header.getCell(3).setCellStyle(style);
+
+		header.createCell(4).setCellValue("Period");
+		header.getCell(4).setCellStyle(style);
+		
+		header.createCell(5).setCellValue("Table Number");
+		header.getCell(5).setCellStyle(style);
+		
+		header.createCell(6).setCellValue("File Number");
+		header.getCell(6).setCellStyle(style);
+		
+		header.createCell(7).setCellValue("Keyward");
+		header.getCell(7).setCellStyle(style);
+		
+		header.createCell(8).setCellValue("Image Name");
+		header.getCell(8).setCellStyle(style);
 	}
 }

@@ -56,16 +56,21 @@ public class AccountService {
 
 				switch (columnIndex) {
 				case 0: {
+					String gattaNumber = String.valueOf(obj);
+					model.setGattaNumber(gattaNumber);
+					break;
+				}
+				case 1: {
 					String financialYear = String.valueOf(obj);
 					model.setFinancialYear(financialYear);
 					break;
 				}
-				case 1: {
+				case 2: {
 					String voucherNumber = String.valueOf(obj);
 					model.setVoucherNumber(voucherNumber);
 					break;
 				}
-				case 2: {
+				case 3: {
 					String imagePath = String.valueOf(obj);
 					model.setImagePath(imagePath);
 					break;

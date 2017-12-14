@@ -15,53 +15,48 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pcmc.dms.master.NagarNameMaster;
-import com.pcmc.dms.model.ZonipuModel;
-import com.pcmc.dms.repository.ZonipuRepository;
+import com.pcmc.dms.model.TownModel;
+import com.pcmc.dms.repository.TownRepository;
 
 @Controller
-public class ZonipuController extends BaseController {
+public class TownController extends BaseController {
 	
 	@Autowired
-	private ZonipuRepository repository;
+	private TownRepository repository;
 	
 	/*
 	 * Upload URL name and View name
 	 */
-	private static final String UPLOAD_URL = "uploadZonipu";
+	private static final String UPLOAD_URL = "uploadTown";
 
-	private static final String SEARCH_URL = "zonipu";
+	private static final String SEARCH_URL = "town";
 	
 	/*
 	 * View URL name and View name
 	 */
-	private static final String VIEW_URL = "viewZonipu";
+	private static final String VIEW_URL = "viewTown";
 	
-	private static final String MODEL_NAME = "zonipuModel";
+	private static final String MODEL_NAME = "townModel";
 	
-	private static final String SEARCH_VIEW_NAME = "searchZonipu";
+	private static final String SEARCH_VIEW_NAME = "searchTown";
 
 	@RequestMapping(value = "/" + SEARCH_URL, method = RequestMethod.GET)
 	public ModelAndView index() {
 		
-		List<NagarNameMaster> masterList = repository.getMasterList(NagarNameMaster.class);
-		
-		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME, MODEL_NAME, new ZonipuModel());
+		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME, MODEL_NAME, new TownModel());
 		modelAndView.addObject("show", true);
 		modelAndView.addObject("UPLOAD_URL", UPLOAD_URL);
 		modelAndView.addObject("SEARCH_URL", SEARCH_URL);
 		modelAndView.addObject("showDeptTable", false);
 		modelAndView.addObject("MODEL_NAME", MODEL_NAME);
 		modelAndView.addObject("VIEW_URL", VIEW_URL);
-		modelAndView.addObject("masterList", masterList);
 		return modelAndView;
 	}
 	
 	@RequestMapping(value = "/" + SEARCH_URL, method = RequestMethod.POST)
-	public ModelAndView search(@ModelAttribute(MODEL_NAME) ZonipuModel model) {
+	public ModelAndView search(@ModelAttribute(MODEL_NAME) TownModel model) {
 		
-		List<NagarNameMaster> masterList = repository.getMasterList(NagarNameMaster.class);
-		List<ZonipuModel> list = repository.getModelList(model);
+		List<TownModel> list = repository.getModelList(model);
 		
 		ModelAndView modelAndView = new ModelAndView(SEARCH_VIEW_NAME,MODEL_NAME, model);
 		modelAndView.addObject("show", true);
@@ -71,17 +66,16 @@ public class ZonipuController extends BaseController {
 		modelAndView.addObject("searchList", list);
 		modelAndView.addObject("MODEL_NAME", MODEL_NAME);
 		modelAndView.addObject("VIEW_URL", VIEW_URL);
-		modelAndView.addObject("masterList", masterList);
 		return modelAndView;
 	}
 	
 	@RequestMapping(value = "/"+VIEW_URL)
 	public ModelAndView viewPropTax(@RequestParam(value = "id", required = false) int entryId,  HttpSession session) {
 		
-		ZonipuModel model = repository.getModel(entryId, ZonipuModel.class);
+		TownModel model = repository.getModel(entryId, TownModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\zonipu\\" + model.getNagarName() + "\\";
+		String LOCAL_FOLDER_PATH = "C:\\images\\town\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 
@@ -117,5 +111,5 @@ public class ZonipuController extends BaseController {
 		}
 		return "redirect:/" + UPLOAD_URL;
 	}
-
+	
 }

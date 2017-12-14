@@ -30,14 +30,17 @@ public class AccountTemplate extends AbstractXlsxView {
 
 		// create header row
 		XSSFRow header = sheet.createRow(0);
-
-		header.createCell(0).setCellValue("Financial Year");
+		
+		header.createCell(0).setCellValue("Gatta Number");
 		header.getCell(0).setCellStyle(style);
 		
-		header.createCell(1).setCellValue("Voucher Number");
+		header.createCell(1).setCellValue("Financial Year");
 		header.getCell(1).setCellStyle(style);
-
-		header.createCell(2).setCellValue("Image Name");
+		
+		header.createCell(2).setCellValue("Voucher Number");
 		header.getCell(2).setCellStyle(style);
+
+		header.createCell(3).setCellValue("Image Name");
+		header.getCell(3).setCellStyle(style);
 	}
 }

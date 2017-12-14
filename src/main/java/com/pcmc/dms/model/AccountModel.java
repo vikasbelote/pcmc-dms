@@ -18,6 +18,9 @@ public class AccountModel {
 	@Column(name = "row_id")
 	private Integer rowId;
 	
+	@Column(name = "gatta_number")
+	private String gattaNumber;
+	
 	@Column(name = "financial_year")
 	private String financialYear;
 	
@@ -57,6 +60,14 @@ public class AccountModel {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	public String getGattaNumber() {
+		return gattaNumber;
+	}
+
+	public void setGattaNumber(String gattaNumber) {
+		this.gattaNumber = gattaNumber;
 	}
 
 	

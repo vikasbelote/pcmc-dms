@@ -111,6 +111,9 @@
 								<li><a href="uploadDataIti">ITI</a></li>
 								<li><a href="uploadDataZonipu">Zonipu</a></li>
 								<li><a href="uploadDataBhoomi">Bhoomi & Zinggi</a></li>
+								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
+								<li><a href="uploadDataBhuyari">Bhuyari Gatar Yojana</a></li>
+								<li><a href="uploadDataMedical">Medical</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -132,6 +135,9 @@
 								<li><a href="uploadDataIti">ITI</a></li>
 								<li><a href="uploadDataZonipu">Zonipu</a></li>
 								<li><a href="uploadDataBhoomi">Bhoomi & Zinggi</a></li>
+								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
+								<li><a href="uploadDataBhuyari">Bhuyari Gatar Yojana</a></li>
+								<li><a href="uploadDataMedical">Medical</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
