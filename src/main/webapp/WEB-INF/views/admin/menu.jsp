@@ -114,6 +114,7 @@
 								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
 								<li><a href="uploadDataBhuyari">Bhuyari Gatar Yojana</a></li>
 								<li><a href="uploadDataMedical">Medical</a></li>
+								<li><a href="uploadDataTown">Town</a></li>
 							</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -138,6 +139,7 @@
 								<li><a href="uploadDataKridaVibhag">Krida Vibhag</a></li>
 								<li><a href="uploadDataBhuyari">Bhuyari Gatar Yojana</a></li>
 								<li><a href="uploadDataMedical">Medical</a></li>
+								<li><a href="uploadDataTown">Town</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
