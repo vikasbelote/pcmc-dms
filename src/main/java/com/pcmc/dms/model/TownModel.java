@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Entity(name = "dms_bhoomi")
+@Entity(name = "dms_town")
 @Scope("prototype")
 public class TownModel {
 	
