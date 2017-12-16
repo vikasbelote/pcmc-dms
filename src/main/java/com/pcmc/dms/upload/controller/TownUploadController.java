@@ -15,12 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pcmc.dms.upload.service.BhoomiService;
+import com.pcmc.dms.upload.service.TownService;
 
 @Controller
 public class TownUploadController {
 	
 	@Autowired
-	private BhoomiService service;
+	private TownService service;
 	
 	//Just change department name
 	private static final String DEPT_NAME = "Town";

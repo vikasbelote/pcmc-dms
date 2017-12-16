@@ -65,7 +65,7 @@ public class TownService {
 					model.setSheetNumber(sheetNumber);
 					break;
 				}
-				case 3: {
+				case 2: {
 					String imagePath = String.valueOf(obj);
 					model.setImagePath(imagePath);
 					break;

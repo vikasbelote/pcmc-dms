@@ -36,7 +36,7 @@ public class TownTemplate extends AbstractXlsxView   {
         header.createCell(1).setCellValue("Sheet Number");
         header.getCell(1).setCellStyle(style);
          
-        header.createCell(4).setCellValue("Image Name");
-        header.getCell(4).setCellStyle(style);
+        header.createCell(2).setCellValue("Image Name");
+        header.getCell(2).setCellStyle(style);
 	}
 }
