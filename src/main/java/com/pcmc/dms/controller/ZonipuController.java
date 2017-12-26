@@ -26,7 +26,7 @@ public class ZonipuController extends BaseController {
 	private ZonipuRepository repository;
 	
 	/*
-	 * Upload URL name and View name
+	 * Upload URL name and View name hv
 	 */
 	private static final String UPLOAD_URL = "uploadZonipu";
 
