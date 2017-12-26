@@ -81,7 +81,7 @@ public class ZonipuController extends BaseController {
 		ZonipuModel model = repository.getModel(entryId, ZonipuModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\zonipu\\" + model.getNagarName() + "\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\zonipu\\" + model.getNagarName() + "\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

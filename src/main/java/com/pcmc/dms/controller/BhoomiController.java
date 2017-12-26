@@ -81,7 +81,7 @@ public class BhoomiController extends BaseController {
 		BhoomiModel model = repository.getModel(entryId, BhoomiModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\bhoomi\\"+model.getVillageName()+"\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\bhoomi\\"+model.getVillageName()+"\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

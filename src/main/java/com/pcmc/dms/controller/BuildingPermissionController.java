@@ -81,7 +81,7 @@ public class BuildingPermissionController extends BaseController {
 		BuildingPermissionModel bupModel = buildingPermissionRepository.getBuildingPermissionModel(entryId);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\bup\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\bup\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(bupModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 		

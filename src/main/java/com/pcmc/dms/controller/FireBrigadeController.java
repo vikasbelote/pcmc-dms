@@ -76,7 +76,7 @@ public class FireBrigadeController extends BaseController {
 		FireBrigadeModel model = repository.getModel(entryId, FireBrigadeModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\fireBrigade\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\fireBrigade\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

@@ -76,7 +76,7 @@ public class VidhutVibhagController extends BaseController {
 		VidhutVibhagModel model = repository.getModel(entryId, VidhutVibhagModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\vidhutVibhag\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\vidhutVibhag\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

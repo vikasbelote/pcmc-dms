@@ -76,7 +76,7 @@ public class NagriSuvidhaController extends BaseController {
 		NagriSuvidhaModel model = repository.getModel(entryId, NagriSuvidhaModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\nagrisuvidha\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\nagrisuvidha\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

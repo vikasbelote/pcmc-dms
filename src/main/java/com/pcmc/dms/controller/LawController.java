@@ -69,7 +69,7 @@ public class LawController extends BaseController{
 		LawModel lawModel = lawRepository.getLawModel(entryId);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\law\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\law\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(lawModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 		

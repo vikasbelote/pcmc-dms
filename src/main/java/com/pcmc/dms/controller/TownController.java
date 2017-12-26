@@ -75,7 +75,7 @@ public class TownController extends BaseController {
 		TownModel model = repository.getModel(entryId, TownModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\town\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\town\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

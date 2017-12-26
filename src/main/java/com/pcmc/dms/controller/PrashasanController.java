@@ -80,7 +80,7 @@ public class PrashasanController extends BaseController {
 		PrashasanModel model = repository.getModel(entryId, PrashasanModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\prashasan\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\prashasan\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

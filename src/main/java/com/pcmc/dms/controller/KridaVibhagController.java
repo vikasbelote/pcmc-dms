@@ -79,7 +79,7 @@ public class KridaVibhagController extends BaseController {
 		KridaVibhagModel kridaVibhagModel = kridaVibhagRepository.getModel(entryId, KridaVibhagModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\krida_vibhag\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\krida_vibhag\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(kridaVibhagModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

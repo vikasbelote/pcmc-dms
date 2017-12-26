@@ -76,7 +76,7 @@ public class BhuyariController extends BaseController {
 		BhuyariModel model = repository.getModel(entryId, BhuyariModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\bhuyari\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\bhuyari\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

@@ -81,7 +81,7 @@ public class NagarSachivController extends BaseController {
 		NagarSachivModel model = repository.getModel(entryId, NagarSachivModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\nagarSachiv\\"+ model.getBodyName()+"\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\nagarSachiv\\"+ model.getBodyName()+"\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

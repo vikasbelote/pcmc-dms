@@ -81,7 +81,7 @@ public class VivahNodhaniController extends BaseController{
 		VivahNodhaniModel vivahNodhaniModel = vivahNodhniRepository.getModel(entryId, VivahNodhaniModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\vivah_nodhani\\" + vivahNodhaniModel.getGattaNo() + "\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\vivah_nodhani\\" + vivahNodhaniModel.getGattaNo() + "\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(vivahNodhaniModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

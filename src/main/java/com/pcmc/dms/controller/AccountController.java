@@ -76,7 +76,7 @@ public class AccountController extends BaseController {
 		AccountModel model = repository.getModel(entryId, AccountModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\account\\" + model.getGattaNumber() + "\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\account\\" + model.getGattaNumber() + "\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

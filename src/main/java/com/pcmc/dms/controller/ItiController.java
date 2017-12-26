@@ -76,7 +76,7 @@ public class ItiController extends BaseController {
 		ItiModel model = repository.getModel(entryId, ItiModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\iti\\" + model.getItiName() + "\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\iti\\" + model.getItiName() + "\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

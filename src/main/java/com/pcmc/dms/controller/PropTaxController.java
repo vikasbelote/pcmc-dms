@@ -81,7 +81,7 @@ public class PropTaxController extends BaseController {
 		PropTaxModel propTaxModel = propTaxRepository.getModel(entryId, PropTaxModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\prop_tax\\" + propTaxModel.getVillageName() + "\\" + propTaxModel.getGutNo() +"\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\prop_tax\\" + propTaxModel.getVillageName() + "\\" + propTaxModel.getGutNo() +"\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(propTaxModel.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 

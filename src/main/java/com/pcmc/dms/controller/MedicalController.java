@@ -91,7 +91,7 @@ public class MedicalController extends BaseController {
 		MedicalModel model = repository.getModel(entryId, MedicalModel.class);
 		
 		//move the file from C:\image folder to static\images folder
-		String LOCAL_FOLDER_PATH = "C:\\images\\medical\\";
+		String LOCAL_FOLDER_PATH = this.localFolederPath + "\\medical\\";
 		String rootPath = session.getServletContext().getRealPath("/");
 		fileHelper.copyFile(model.getImagePath(), rootPath, LOCAL_FOLDER_PATH);
 
