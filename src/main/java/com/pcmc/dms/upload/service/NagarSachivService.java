@@ -3,7 +3,10 @@ package com.pcmc.dms.upload.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -65,9 +68,19 @@ public class NagarSachivService {
 					model.setKarypatrikaNumber(karypatrikaNumber);
 					break;
 				}
-				case 2: {
-					String karypatrikaDate = String.valueOf(obj);
-					model.setKarypatrikaDate(karypatrikaDate);
+				case 2: {	
+					try{
+						DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+						Date cellKarypatrikaDate = nextCell.getDateCellValue();
+						String karypatrikaDate = df.format(cellKarypatrikaDate);
+						model.setKarypatrikaDate(karypatrikaDate);
+					}
+					catch(Exception e) {
+						String karypatrikaDate = String.valueOf(obj);
+						model.setKarypatrikaDate(karypatrikaDate);
+					}
+					
+					
 					break;
 				}
 				case 3: {
