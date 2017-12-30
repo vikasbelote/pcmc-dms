@@ -77,9 +77,7 @@ public class VivahNodhaniService {
 					break;
 				}
 				case 3: {
-					DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-					Date cellEntityRegistrationDate = nextCell.getDateCellValue();
-					String entityRegistrationDate = df.format(cellEntityRegistrationDate);
+					String entityRegistrationDate = String.valueOf(obj);
 					vivahNodhaniModel.setEntityRegistrationDate(entityRegistrationDate);
 					break;
 				}
