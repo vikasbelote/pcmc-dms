@@ -7,8 +7,9 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">Person Name</label>
 			<div class="col-sm-9" style="text-align: left;">
-				
-				<form:input path="workingPersonName" class="col-sm-5 form-control" />
+				<form:label path="workingPersonName" class="col-sm-12">
+					${ fireBrigadeModel.workingPersonName }
+				</form:label>
 			</div>
 		</div>
 		<div class="form-group">
