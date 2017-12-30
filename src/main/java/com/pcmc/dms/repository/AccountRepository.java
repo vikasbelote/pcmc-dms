@@ -18,6 +18,7 @@ public class AccountRepository extends BaseRepository {
 		sb.append("from dms_account ");
 		sb.append("where (financial_year like CONCAT(TRIM(IFNULL('" + accountModel.getFinancialYear() + "', '')), '%') or financial_year is null) ");
 		sb.append("and (voucher_number like CONCAT(TRIM(IFNULL('" + accountModel.getVoucherNumber() + "', '')), '%')  or voucher_number is null) ");
+		sb.append("and (gatta_number like CONCAT(TRIM(IFNULL('" + accountModel.getGattaNumber() + "', '')), '%')  or gatta_number is null) ");
 		sb.append("LIMIT 100");
 		
 		list = super.getList(sb.toString(),AccountModel.class);
