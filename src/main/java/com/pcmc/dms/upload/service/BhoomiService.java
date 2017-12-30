@@ -69,7 +69,8 @@ public class BhoomiService {
 				}
 				case 2: {
 					String serveNumber = String.valueOf(obj);
-					model.setServeNumber(serveNumber);
+					if(serveNumber != null)
+						model.setServeNumber(UnicodeHelper.stringToHTMLString(serveNumber));
 					break;
 				}
 				case 3: {
