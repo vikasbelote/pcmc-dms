@@ -30,8 +30,7 @@
 						<thead>
 							<tr>
 								<th><strong>Row Number</strong></th>
-								<th><strong>Person Name</strong></th>
-								<th><strong>Computer Number</strong></th>
+								<th><strong>Nividha Number</strong></th>
 								<th></th>
 							</tr>
 						</thead>
@@ -40,7 +39,6 @@
 								<tr>
 									<td>${ item[0]  }</td>
 									<td>${ item[1]  }</td>
-									<td>${ item[2] }</td>
 									<td><a href="./${VIEW_URL}?id=${ item[0] }">View</a></td>
 								</tr>
 							</c:forEach>
