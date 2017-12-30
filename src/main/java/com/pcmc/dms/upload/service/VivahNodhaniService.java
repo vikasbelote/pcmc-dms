@@ -77,8 +77,16 @@ public class VivahNodhaniService {
 					break;
 				}
 				case 3: {
-					String entityRegistrationDate = String.valueOf(obj);
-					vivahNodhaniModel.setEntityRegistrationDate(entityRegistrationDate);
+					try{
+						DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+						Date cellEntityRegistrationDate = nextCell.getDateCellValue();
+						String entityRegistrationDate = df.format(cellEntityRegistrationDate);
+						vivahNodhaniModel.setEntityRegistrationDate(entityRegistrationDate);
+					}
+					catch(Exception e) {
+						String entityRegistrationDate = String.valueOf(obj);
+						vivahNodhaniModel.setEntityRegistrationDate(entityRegistrationDate);
+					}
 					break;
 				}
 				case 4: {

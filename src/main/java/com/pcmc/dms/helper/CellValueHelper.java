@@ -18,6 +18,7 @@ public class CellValueHelper {
 	    	Integer intValue = value.intValue();
 	    	return intValue;
 	    }
+	    
 	    }
 	 
 	    return null;

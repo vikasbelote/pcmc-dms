@@ -3,7 +3,10 @@ package com.pcmc.dms.upload.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -61,8 +64,17 @@ public class AccountService {
 					break;
 				}
 				case 1: {
-					String financialYear = String.valueOf(obj);
-					model.setFinancialYear(financialYear);
+					
+					try {
+						DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+						Date financialYear = nextCell.getDateCellValue();
+						String dateStr = df.format(financialYear);
+						model.setFinancialYear(dateStr);
+					}
+					catch(Exception e) {
+						String dateStr = String.valueOf(obj);
+						model.setFinancialYear(dateStr);
+					}
 					break;
 				}
 				case 2: {
