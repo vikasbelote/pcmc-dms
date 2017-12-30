@@ -13,7 +13,9 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">Work Name</label>
 			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="workName" class="col-sm-5 form-control" />
+				<form:label path="workName" class="col-sm-12">
+					${ bhuyariModel.workName }
+				</form:label>
 			</div>
 		</div>
 		<div class="form-group">
