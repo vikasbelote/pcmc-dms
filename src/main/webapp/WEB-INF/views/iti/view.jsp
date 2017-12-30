@@ -19,7 +19,10 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="form-field-1">Nasti Name</label>
 			<div class="col-sm-9" style="text-align: left;">
-				<form:input path="nastiName" class="col-sm-5 form-control" />
+				
+				<form:label path="nastiName" class="col-sm-12">
+					${ itiModel.nastiName }
+				</form:label>
 			</div>
 		</div>
 		<div class="form-group">
